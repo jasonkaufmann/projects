@@ -197,7 +197,7 @@ public class Main {
 		int a = 1;
 		JsonElement jsonElement;
 		String baseURL = "https://www.dmv.org/ajax/Polk/getMakes?year=2014";
-		//String getLinks = "&prop=links&pllimit=max&format=json";
+		String getLinks = "&prop=links&pllimit=max&format=json";
 		String parse = link.replaceAll(" ", "_");
 		String link_f = baseURL + parse + getLinks;
 		URL url = new URL(link_f);
