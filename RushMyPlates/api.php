@@ -4,7 +4,6 @@ $VIN=$_POST['VIN'];
 header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json');
 $ch = curl_init('https://api.dataonesoftware.com/webservices/vindecoder/decode');
-$post_vars = 'client_id=16753&authorization_code=fd39ec5a2aa5a31fc6e429db028ba5c345064312&decoder_query=';
 $post_vars .= '
 {
    "decoder_settings" : {
