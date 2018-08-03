@@ -1,0 +1,60 @@
+body {
+    margin:0px;
+    padding:0px;
+    height: 450px;
+}
+.Container {
+    width:800px;
+    height: auto;
+    clear: both;
+    overflow: auto;
+    margin:40px auto;
+    background-color: white;
+}
+.Header {
+    width: 300px;
+    height: 175px;
+}
+.Menu {
+    height: 50px;
+}
+.LeftBody {
+    width: 300px;
+    float: left;
+    height: 175px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCovSdeRRiZkXFEKtJ0Bqj8IB2FDQBuXUoM6p2b4v9a0ixAHc_A);
+    background-position: center;
+}
+.RightBody {
+    width: 450px;
+    float: right;
+    height: auto;
+}
+.Footer {
+    height: 100px;
+}
+.FormElement {
+    width: 350px;
+    margin: 6px auto;
+    height: 40px;
+}
+.TField {
+    width: 350px;
+    height: 35px;
+    border: 1px solid blue;
+    padding-left: 6px;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+.button {
+    width: 200px;
+    height: 50px;
+    border: 0px solid;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 24px;
+}
+.button:hover {
+    background-color: darkblue;
+    color: white;
+}

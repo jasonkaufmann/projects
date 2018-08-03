@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head>
+    <title>Project 3</title>
+    </head>
+<body>
+<!-- Onchange function is used for the createSecondaryMenu() function in the js file in order for the on the fly sections to appear or execute--> 
+<select name="surfacearea" id="sa1" onchange="createSecondaryMenu()">
+    <option value="">---Select Object---</option>
+    <option value="cube">Cube</option>
+    <option value="rec-prism">Rectangular Prism</option>
+    <option value="prism">Prism</option>
+    <option value="sphere">Sphere</option>
+    <option value="cylinder">Cylinder</option>
+</select>   
+    
+    <!-- Placeholder for secondary dropdown -->
+    <div id="sec-menu"></div>
+    
+    <script src="project3-sa.js"></script>
+</body>
+</html>

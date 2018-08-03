@@ -1,0 +1,84 @@
+#Menu {
+	width:800px;
+	height:50px;
+	margin: 11px auto 11px auto;
+	clear:both;
+	background-color:rgb(43, 43, 43);
+	border-bottom:4px solid rgb(212, 76, 50);
+	/* Gradient BG End */
+}
+nav .cssmenu { margin:0; padding:0 }
+nav .cssmenu li {
+	list-style-type:none;
+	display:block;
+	float:left;
+	width:160px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:17px;
+	font-weight:lighter;
+}
+nav .cssmenu li a {
+	display:block;
+	text-decoration:none;
+	color:#FFF;
+}
+nav .cssmenu li:hover {
+	background-color:rgb(68, 68, 68);
+	border-left:4px solid rbg(212, 76, 50);
+}
+nav .cssmenu ul {
+	display:none;
+}
+nav .cssmenu li:hover > ul {
+	display:block;
+}
+nav .cssmenu ul li {
+	background-color:rgb(68, 68, 68);
+}
+nav .cssmenu ul li:hover {
+	background-color:rgb(212, 76, 50);
+}
+nav .cssmenu ul ul {
+	display:none;
+}
+nav .cssmenu ul li:hover > ul {
+	display:block;
+	margin-left:160px;
+	margin-top:-50px;
+}
+nav .cssmenu ul ul li {
+	background-color:rgb(68, 68, 68);
+	content: none;
+}
+nav .cssmenu ul ul li:hover {
+	background-color:rgb(212, 76, 50);
+}
+nav .cssmenu ul li:before {
+	content: none;
+}
+nav .cssmenu ul ul li:before {
+	content: none;
+}
+li {
+	font-weight:lighter;
+}
+
+@media all and (min-width: 900px) {
+	#Menu {
+		display:block;
+	}
+	.header {
+		display:none;
+	}
+}
+@media all and (max-width: 900px) {
+	#Menu {
+		display:none;
+	}
+	.header {
+		display:block;
+	}
+}
