@@ -1,7 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl3XF9go4hc6Dt6oVj6D0EnSe_wlUZLNo&libraries=places" async defer>
-</script>
 <script type='text/javascript'>
     $(document).ready(function() {
         if ($(window).width() > 1000) {} else {
@@ -2001,7 +1997,6 @@ var done4 = false;
             var file = filesToUploads[0];
             console.log("got to function");
             if (file) {
-
                 var reader = new FileReader();
                 // Set the image once loaded into file reader
                 reader.onload = function(e) {
