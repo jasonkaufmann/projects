@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl3XF9go4hc6Dt6oVj6D0EnSe_wlUZLNo&libraries=places" async defer></script>
 <script type='text/javascript'>
     $(document).ready(function() {
         if ($(window).width() > 1000) {} else {
@@ -1987,7 +1989,7 @@ var done4 = false;
 
     $(document).ready(function() {
         $('#field67834247').change(function(evt) {
-           ID_Upload();
+               ID_Upload();
         })
     })
 
@@ -1995,13 +1997,14 @@ var done4 = false;
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             var filesToUploads = document.getElementById('field67834247').files;
             var file = filesToUploads[0];
+            console.log(file);
             console.log("got to function");
             if (file) {
-                var reader = new FileReader();
-                // Set the image once loaded into file reader
-                reader.onload = function(e) {
+                console.log("file loaded");
+                //var reader = new FileReader();
+                //Set the image once loaded into file reader
 
-                    var img = document.createElement("img");
+                    /*var img = document.createElement("img");
                     img.src = e.target.result;
 
                     var canvas = document.createElement("canvas");
@@ -2027,11 +2030,41 @@ var done4 = false;
                     canvas.width = width;
                     canvas.height = height;
                     var ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0, width, height);
-
-                    str = canvas.toDataURL(file.type);
-                    console.log(str);
-            }
+                    ctx.drawImage(img, 0, 0, width, height);*/
+                   var reader = new FileReader();
+                   reader.readAsDataURL(file);
+                   reader.onload = function () {
+                     var base64 = reader.result;
+                       var url5 = "./api5"
+                          $.ajax({
+                             url: url5,
+                                type: "GET",
+                                crossDomain: true,
+                                success: function(data) {
+                                    console.log(data);
+                                }
+                        });
+                       
+                       /* $.ajax({
+                            url: "https://bws.bioid.com/extension/upload?" + jQuery.param({
+                                "tag": "up"
+                            }),
+                            method: "POST",
+                            headers: {
+                                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmlkIjoiMmQyYWFkZDEtOTgxOC00N2VmLTkxMjEtMjdiMTgxNTI2ZmI2IiwiY2xudCI6IlBsYXlncm91bmQiLCJhcHAiOiI4MTAzMjM5NDAuNi5hcHAuYmlvaWQuY29tIiwidHJhaXRzIjozLCJ0YXNrIjo0MzU1LCJiY2lkIjoiYmlvaWQvNDIvNDA5MDQ3MzU2IiwibmJmIjoxNTM0ODYzODQ3LCJleHAiOjE1MzQ4NjQ0NDcsImlhdCI6MTUzNDg2Mzg0NywiaXNzIjoiQldTIiwiYXVkIjoiaHR0cHM6Ly9id3MuYmlvaWQuY29tIn0.gf3Cil7GB-L9PHHXPaDJZi1hmyQt-Qb8k0kYlH4lLxo"
+                            },
+                            data: base64,
+                        }).done(function (data, textStatus, jqXHR) {
+                          if (data.Accepted) {
+                            console.log("upload succeeded", data.Warnings);
+                          } else {
+                            console.log("upload error", data.Error);
+                          }
+                        });*/
+                   };
+                   reader.onerror = function (error) {
+                    console.log("error");
+                   };
 
         }
     }
