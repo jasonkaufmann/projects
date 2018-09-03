@@ -5,47 +5,12 @@
         if ($(window).width() > 1000) {} else {
             setTimeout(function() {
                 console.log("reached");
-                $("#fsPage3123304-1").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-2").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-3").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-4").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-5").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-6").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-7").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-8").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-9").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-                $("#fsPage3123304-10").css({
-                    "margin-left": "0%",
-                    "margin-right": "0%"
-                });
-
+                for (var i = 1; i < 11; i++) {
+                    $("#fsPage3123304-" + String(i)).css({
+                        "margin-left": "0%",
+                        "margin-right": "0%"
+                    })
+                }
                 $(".fsBody").css({
                     "width": "100%",
                     "margin-left": "0%"
@@ -78,16 +43,17 @@
             $(choose).removeClass("active");
             index -= 1
         });
-    })
 
-    var wto;
-    var times = 0;
-    var make;
-    var model;
-    var year;
-    $(document).ready(function() {
+        var wto;
+        var times = 0;
+        var make;
+        var model;
+        var year;
+
         $("#field66402009").on("input", function() {
             $("#preview").css("display", "none");
+            document.getElementById("fsCell66427573").style.display = "block";
+            $("#fsCell66402017").css("width", "");
             document.getElementById("fsCell66427573").style.display = "block";
             document.getElementById("label66402009").classList.remove("loading8");
             document.getElementById("field66402009").classList.remove("verificationGreen");
@@ -110,7 +76,7 @@
                 document.getElementById("label66764231").className = "loading7";
                 document.getElementById("label66402017").className = "loading9";
             }
-            document.getElementById("verification").innerHTML = "";
+            $("#verification").hide();
             clearTimeout(wto);
             wto = setTimeout(function() {
                 console.log(VIN);
@@ -135,6 +101,7 @@
                     console.log("not 17");
                     document.getElementById("fsCell66402009").classList.add("fsValidationError");
                     document.getElementById("verification").innerHTML = "Make sure VIN is 17 characters long.";
+                    $("#verification").show();
                     document.getElementById("verification").classList.add("fsValidationError");
                     document.getElementById("field66425137").value = "";
                     document.getElementById("field66425138").value = "";
@@ -156,6 +123,7 @@
                     console.log("17 but no numbers");
                     document.getElementById("fsCell66402009").classList.add("fsValidationError");
                     document.getElementById("verification").innerHTML = "Make sure VIN is correct.";
+                    $("#verification").show();
                     document.getElementById("verification").classList.add("fsValidationError");
                     document.getElementById("field66425137").value = "";
                     document.getElementById("field66425138").value = "";
@@ -210,6 +178,7 @@
                                                 document.getElementById("label66402011").classList.remove("loading6");
                                                 document.getElementById("label66764231").classList.remove("loading7");
                                                 document.getElementById("label66402017").classList.remove("loading9");
+                                                $("#verification").hide();
                                                 document.getElementById("verification").classList.remove("fsValidationError");
                                                 document.getElementById("verification").classList.remove("verificationGreen");
                                                 document.getElementById("fsCell66402009").classList.remove("fsValidationError");
@@ -225,11 +194,12 @@
                                                     //document.getElementById("verification").innerHTML = "Loaded successfully. Verify autocompleted fields are correct.";
                                                     document.getElementById("fsCell66402009").classList.remove("verificationGreen");
                                                     document.getElementById("fsCell66402009").classList.add("verificationGreen");
+                                                    $("#verification").show();
                                                     setTimeout(function() {
-                                                            document.getElementById("fsCell66402009").classList.remove("verificationGreen");
+                                                        document.getElementById("fsCell66402009").classList.remove("verificationGreen");
 
-                                                        }, 1000)
-                                                        //document.getElementById("verification").classList.add("verificationGreen");
+                                                    }, 1000)
+                                                    //document.getElementById("verification").classList.add("verificationGreen");
                                                     document.getElementById("field66402009").classList.remove("fsRequired");
                                                     //document.getElementById("field66402009").classList.add("verificationGreen");
                                                     $('<p id="animate"></p>').insertAfter("#label66402009");
@@ -249,6 +219,7 @@
                                     } else {
                                         document.getElementById("fsCell66402009").classList.add("fsValidationError");
                                         document.getElementById("verification").innerHTML = "Make sure VIN is correct. Enter info manually if needed.";
+                                        $("#verification").show();
                                         document.getElementById("verification").classList.add("fsValidationError");
                                         document.getElementById("field66425137").value = "";
                                         document.getElementById("field66425138").value = "";
@@ -285,6 +256,7 @@
                                     document.getElementById("label66402017").classList.remove("loading9");
                                     document.getElementById("verification").classList.remove("fsValidationError");
                                     document.getElementById("verification").classList.remove("validationGreen");
+                                    $("#verification").hide();
                                     document.getElementById("fsCell66402009").classList.remove("fsValidationError");
                                     document.getElementById("field66425137").value = "";
                                     document.getElementById("field66425138").value = "";
@@ -306,7 +278,9 @@
                                         fueltype = "Flex";
                                     }
                                     if (fueltype == "Electric") {
+                                        console.log("car is electric");
                                         document.getElementById("fsCell66427573").style.display = "none";
+                                        $("#fsCell66402017").css("width", "100%");
                                     } else {
                                         document.getElementById("field66427573").type = "text";
                                         document.getElementById("label66427573").style.visibility = "visible";
@@ -357,16 +331,16 @@
                                         document.getElementById("field66402011").value = vehicletype;
                                         $("#field66402011").trigger('change');
                                     }
-                                    document.getElementById("verification").innerHTML = "";
+                                    $("#verification").hide();
                                     //document.getElementById("verification").innerHTML = "Loaded successfully. Verify autocompleted fields are correct.";
                                     document.getElementById("fsCell66402009").classList.remove("fsFieldFocused");
                                     document.getElementById("fsCell66402009").classList.add("verificationGreen");
                                     setTimeout(function() {
-                                            document.getElementById("fsCell66402009").classList.remove("verificationGreen");
+                                        document.getElementById("fsCell66402009").classList.remove("verificationGreen");
 
-                                        }, 1000)
-                                        //document.getElementById("verification").classList.add("verificationGreen");
-                                        //document.getElementById("field66402009").classList.add("verificationGreen");
+                                    }, 1000)
+                                    //document.getElementById("verification").classList.add("verificationGreen");
+                                    //document.getElementById("field66402009").classList.add("verificationGreen");
                                     console.log("add class");
                                     $('<p id="animate"></p>').insertAfter("#label66402009");
                                     document.getElementById("animate").classList.add("draw");
@@ -399,6 +373,7 @@
                                     document.getElementById("fsCell66402009").classList.add("fsValidationError");
                                     document.getElementById("verification").innerHTML = "Make sure VIN is correct. Enter info manually if needed.";
                                     document.getElementById("verification").classList.add("fsValidationError");
+                                    $("#verification").show();
                                     document.getElementById("field66425137").value = "";
                                     document.getElementById("field66425138").value = "";
                                     document.getElementById("field66425140").value = "";
@@ -420,17 +395,19 @@
                         }
                     });
                 }
-            }, 750);
+            }, 2000);
         });
-    });
-    $(document).ready(function() {
+
         $("#field66402018").on("change", function() {
             if (this.value != "Electric") {
                 document.getElementById("fsCell66427573").style.display = "block";
+                $("#fsCell66402017").css("width", "");
+            } else {
+                document.getElementById("fsCell66427573").style.display = "none";
+                $("#fsCell66402017").css("width", "100%");
             }
         })
-    })
-    $(document).ready(function() {
+
         $("#field66402017").on("change", function() {
             document.getElementById("fsCell66402017").classList.remove("highlight");
         })
@@ -441,99 +418,142 @@
             document.getElementById("fsCell66402018").classList.remove("highlight");
         })
 
-    })
-    $(document).ready(function() {
+
         $('input[type=radio][name=field66401970]').change(function() {
             console.log("changed");
             if (document.getElementById("field66401970_2").checked && !document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
                 var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Owner Information</li>
-      <li id="li4">Registration Applicant Info</li>
-      <li id="li5">Vehicle Info</li>
-      <li id="li6">More Vehicle Info</li>
-      <li id="li7">Document Upload</li>
-      <li id="li8">Paperwork</li>
-      <li id="li9">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "10.5%");
-                $(".progressbar li").toggleClass('special2');
-                $(child).remove();
+                progress(1, child);
+                remove(child);
             } else if (!document.getElementById("field66401970_2").checked && document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
                 var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Registration Applicant Info</li>
-      <li id="li4">Vehicle Info</li>
-      <li id="li5">More Vehicle Info</li>
-      <li id="li6">Seller/Donor Info</li>
-      <li id="li7">Document Upload</li>
-      <li id="li8">Paperwork</li>
-      <li id="li9">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "10.5%");
-                $(".progressbar li").toggleClass('special2');
-                $(child).remove();
+                progress(2, child);
+                remove(child);
             } else if (document.getElementById("field66401970_2").checked && document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
                 var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Owner Information</li>
-      <li id="li4">Registration Applicant Info</li>
-      <li id="li5">Vehicle Info</li>
-      <li id="li6">More Vehicle Info</li>
-      <li id="li7">Seller/Donor Info</li>
-      <li id="li8">Document Upload</li>
-      <li id="li9">Paperwork</li>
-      <li id="li10">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "9.5%");
-                $(".progressbar li").toggleClass('special3');
-                $(child).remove();
+                progress(4, child);
+                remove(child);
             } else if ($(window).width() > 1000) {
                 var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Registration Applicant Info</li>
-      <li id="li4">Vehicle Info</li>
-      <li id="li5">More Vehicle Info</li>
-      <li id="li6">Document Upload</li>
-      <li id="li7">Paperwork</li>
-      <li id="li8">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "12%");
-                $(child).remove();
+                progress(3, child);
+                remove(child);
             }
         })
         $('input[type=radio][name=field66401972]').change(function() {
             console.log("changed");
             if (document.getElementById("field66401970_2").checked && !document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
                 var child = document.getElementById("fsForm3123304").firstChild;
+                progress(1, child);
+                remove(child);
+            } else if (!document.getElementById("field66401970_2").checked && document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
+                var child = document.getElementById("fsForm3123304").firstChild;
+                progress(2, child);
+                remove(child);
+            } else if (document.getElementById("field66401970_2").checked && document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
+                var child = document.getElementById("fsForm3123304").firstChild;
+                progress(4, child);
+                remove(child);
+            } else if ($(window).width() > 1000) {
+                var child = document.getElementById("fsForm3123304").firstChild;
+                progress(3, child);
+                remove(child);
+            }
+        })
+
+        $(window).resize(function() {
+            var child = document.getElementById("fsForm3123304").firstChild;
+            if ($(window).width() <= 1000) {
+                console.log("reached");
+                for (var i = 1; i < 11; i++) {
+                    $("#fsPage3123304-" + String(i)).css({
+                        "margin-left": "0%",
+                        "margin-right": "0%"
+                    })
+                }
+                $(".fsBody").css({
+                    "width": "100%",
+                    "margin-left": "0%"
+                })
+            } else {
+                console.log("reached");
+                for (var i = 1; i < 11; i++) {
+                    $("#fsPage3123304-" + String(i)).css({
+                        "margin-left": "10%",
+                        "margin-right": "10%"
+                    })
+                }
+                $(".fsBody").css({
+                    "width": "75%",
+                    "margin-left": "12.5%"
+                })
+            }
+            if ($(window).width() <= 1000 && $(child).hasClass("progressbar")) {
+                console.log("screen size changed and not added");
+                var child = document.getElementById("fsForm3123304").firstChild;
+                child.classList.remove("special");
+                child.classList.add("fade");
+                $(child).hide();
+            } else if ($(window).width() > 1000 && $(child).hasClass("progressbar")) {
+                var child = document.getElementById("fsForm3123304").firstChild;
+                child.classList.add("special");
+                child.classList.remove("fade");
+                $(child).show();
+            }
+        })
+        var times_new = 0;
+
+        $('#field66401969').change(function() {
+            console.log("duplicate title maybe");
+            console.log(times_new);
+            if (this.value == "Duplicate Title") {
+                var child = document.getElementById("fsForm3123304").firstChild;
+                progress(5, child);
+                remove(child);
+            } else if (this.value == "Register a Vehicle" || this.value == "Transfer Plates to Another Vehicle") {
+                document.getElementById("field66401970_2").checked = false;
+                document.getElementById("field66401970_1").checked = true;
+                document.getElementById("field66401972_2").checked = false;
+                document.getElementById("field66401972_1").checked = false;
+                var child = document.getElementById("fsForm3123304").firstChild;
+                progress(3, child);
+                remove(child);
+            } else {
+                var child = document.getElementById("fsForm3123304").firstChild;
+                $(child).hide();
+            }
+        })
+
+        function remove(child) {
+            if ($(window).width() < 1000) {
+                $(".progressbar").hide();
+            }
+            if (times_new != 0) {
+                $(child).remove();
+                console.log("remove");
+            }
+            times_new++;
+        }
+
+        function progress(val, child) {
+            if (val == 1) {
                 $(`<ul class="progressbar">
       <li id="li1" class="active">Info</li>
       <li id="li2">Application Details</li>
-      <li id="li3">Owner Information</li>
-      <li id="li4">Registration Applicant Info</li>
+      <li id="li3">Owner Info</li>
+      <li id="li4">Applicant Info</li>
       <li id="li5">Vehicle Info</li>
       <li id="li6">More Vehicle Info</li>
       <li id="li7">Document Upload</li>
       <li id="li8">Paperwork</li>
       <li id="li9">Billing</li>
     </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "10.5%");
+                $(".progressbar li").css("width", "11.11%");
                 $(".progressbar li").toggleClass('special2');
-                $(child).remove();
-            } else if (!document.getElementById("field66401970_2").checked && document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
-                var child = document.getElementById("fsForm3123304").firstChild;
+            } else if (val == 2) {
                 $(`<ul class="progressbar">
       <li id="li1" class="active">Info</li>
       <li id="li2">Application Details</li>
-      <li id="li3">Registration Applicant Info</li>
+      <li id="li3">Applicant Info</li>
       <li id="li4">Vehicle Info</li>
       <li id="li5">More Vehicle Info</li>
       <li id="li6">Seller/Donor Info</li>
@@ -541,16 +561,26 @@
       <li id="li8">Paperwork</li>
       <li id="li9">Billing</li>
     </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "10.5%");
+                $(".progressbar li").css("width", "11.11%");
                 $(".progressbar li").toggleClass('special2');
-                $(child).remove();
-            } else if (document.getElementById("field66401970_2").checked && document.getElementById("field66401972_2").checked && $(window).width() > 1000) {
-                var child = document.getElementById("fsForm3123304").firstChild;
+            } else if (val == 3) {
                 $(`<ul class="progressbar">
       <li id="li1" class="active">Info</li>
       <li id="li2">Application Details</li>
-      <li id="li3">Owner Information</li>
-      <li id="li4">Registration Applicant Info</li>
+      <li id="li3">Applicant Info</li>
+      <li id="li4">Vehicle Info</li>
+      <li id="li5">More Vehicle Info</li>
+      <li id="li6">Document Upload</li>
+      <li id="li7">Paperwork</li>
+      <li id="li8">Billing</li>
+    </ul>`).insertBefore(child);
+                $(".progressbar li").css("width", "12.5%");
+            } else if (val == 4) {
+                $(`<ul class="progressbar">
+      <li id="li1" class="active">Info</li>
+      <li id="li2">Application Details</li>
+      <li id="li3">Owner Info</li>
+      <li id="li4">Applicant Info</li>
       <li id="li5">Vehicle Info</li>
       <li id="li6">More Vehicle Info</li>
       <li id="li7">Seller/Donor Info</li>
@@ -558,58 +588,15 @@
       <li id="li9">Paperwork</li>
       <li id="li10">Billing</li>
     </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "9.5%");
+                $(".progressbar li").css("width", "10%");
+                $(".progressbar").toggleClass('special1');
                 $(".progressbar li").toggleClass('special3');
-                $(child).remove();
-            } else if ($(window).width() > 1000) {
-                var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Registration Applicant Info</li>
-      <li id="li4">Vehicle Info</li>
-      <li id="li5">More Vehicle Info</li>
-      <li id="li6">Document Upload</li>
-      <li id="li7">Paperwork</li>
-      <li id="li8">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "12%");
-                $(child).remove();
-            }
-        })
-    })
-    $(document).ready(function() {
-        $(window).resize(function() {
-            setTimeout(function() {
-                var child = document.getElementById("fsForm3123304").firstChild;
-                if ($(window).width() <= 1000 && $(child).hasClass("progressbar")) {
-                    console.log("screen size changed and not added");
-                    var child = document.getElementById("fsForm3123304").firstChild;
-                    child.classList.remove("special");
-                    child.classList.add("fade");
-                    setTimeout(function() {
-                        $(child).hide();
-                    }, 1000)
-                } else if ($(window).width() > 1000 && $(child).hasClass("progressbar")) {
-                    var child = document.getElementById("fsForm3123304").firstChild;
-                    child.classList.add("special");
-                    child.classList.remove("fade");
-                    $(child).show();
-                }
-            }, 1000)
-        })
-    })
-
-    $(document).ready(function() {
-        $('#field66401969').change(function() {
-            console.log("duplicate title maybe");
-            if (this.value == "Duplicate Title" && $(window).width() > 1000) {
-                var child = document.getElementById("fsForm3123304").firstChild;
+            } else if (val == 5) {
                 $(`<ul class="progressbar">
       <li id="li1" class="active">Info</li>
       <li id="li2">Application Details</li>
       <li id="li3">Duplicate Title</li>
-      <li id="li4">Owner Info</li> 
+      <li id="li4">Owner Info</li>
       <li id="li5">Vehicle Info</li>
       <li id="li6">Document Upload</li>
       <li id="li7">Paperwork</li>
@@ -617,103 +604,56 @@
                 $(".progressbar li").css("width", "14.2857%");
                 $(".progressbar li").toggleClass('special1');
                 $(".progressbar").toggleClass('special');
-                $(child).remove();
-            } else if (this.value == "Register a Vehicle" && $(window).width() > 1000) {
-                var child = document.getElementById("fsForm3123304").firstChild;
-                var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Registration Applicant Info</li>
-      <li id="li4">Vehicle Info</li>
-      <li id="li5">More Vehicle Info</li>
-      <li id="li6">Document Upload</li>
-      <li id="li7">Paperwork</li>
-      <li id="li8">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "12%");
-                $(child).remove();
-            } else if (this.value == "Transfer Plates to Another Vehicle" && $(window).width() > 1000) {
-                var child = document.getElementById("fsForm3123304").firstChild;
-                var child = document.getElementById("fsForm3123304").firstChild;
-                $(`<ul class="progressbar">
-      <li id="li1" class="active">Info</li>
-      <li id="li2">Application Details</li>
-      <li id="li3">Registration Applicant Info</li>
-      <li id="li4">Vehicle Info</li>
-      <li id="li5">More Vehicle Info</li>
-      <li id="li6">Document Upload</li>
-      <li id="li7">Paperwork</li>
-      <li id="li8">Billing</li>
-    </ul>`).insertBefore(child);
-                $(".progressbar li").css("width", "12%");
-                $(child).remove();
-            } else {
-                var child = document.getElementById("fsForm3123304").firstChild;
-                child.classList.remove("special");
-                child.classList.add("fade");
-                setTimeout(function() {
-                    $(child).remove();
-                }, 1000)
             }
-        })
-    })
 
-    function photo_video() {
-        document.getElementById("field66647668").value = "none";
-        var url1 = "https://api.fuelapi.com/v1/json/vehicle/"
-        var url2 = "https://api.fuelapi.com/v1/json/vehicles/?";
-        var api_key = "&api_key=daefd14b-9f2b-4968-9e4d-9d4bb4af01d1";
-        console.log(year);
-        console.log(model);
-        console.log(make);
-        var url3 = url2 + "year=" + year + "&" + "model=" + model + "&" + "make=" + make + api_key;
-        url3 = url3.replace(/\s+/g, '');
-        console.log(url3);
-        $.ajax({
-            url: url3,
-            type: "GET",
-            contentType: "application/x-www-form-urlencoded",
-            crossDomain: true,
-            dataType: "json",
-            success: function(data) {
-                try {
-                    console.log(data);
-                    var id = data["0"].id;
-                    console.log(id);
-                    $.ajax({
-                        url: "./api3",
-                        type: "POST",
-                        data: {
-                            "URL": url1 + id + api_key
-                        },
-                        crossDomain: true,
-                        dataType: "json",
-                        success: function(data) {
-                            document.getElementById("fsCell66672188").hidden = false;
-                            console.log(data);
-                            if (data.products["0"].productFormats["0"].assets) {
-                                console.log("searching for photos");
-                                var video = data.products["0"].productFormats["0"].assets;
-                                for (i = 0; i < video.length; i++) {
-                                    if (video[i].shotCode.code == "116") {
-                                        var photo = video[i].url;
-                                        console.log(photo);
-                                        document.getElementById("field66647668").value = photo;
-                                    }
-                                }
-                            } else {}
-                            try {
-                                var video1 = data.products[8].productFormats[0].assets["0"].url;
-                                console.log(video1);
-                                document.getElementById("aliciasucks").src = video1;
-                                var video = document.getElementById("alicia");
-                                video.load();
-                                video.play();
+        }
+
+        function photo_video() {
+            document.getElementById("field66647668").value = "none";
+            var url1 = "https://api.fuelapi.com/v1/json/vehicle/"
+            var url2 = "https://api.fuelapi.com/v1/json/vehicles/?";
+            var api_key = "&api_key=daefd14b-9f2b-4968-9e4d-9d4bb4af01d1";
+            console.log(year);
+            console.log(model);
+            console.log(make);
+            var url3 = url2 + "year=" + year + "&" + "model=" + model + "&" + "make=" + make + api_key;
+            url3 = url3.replace(/\s+/g, '');
+            console.log(url3);
+            $.ajax({
+                url: url3,
+                type: "GET",
+                contentType: "application/x-www-form-urlencoded",
+                crossDomain: true,
+                dataType: "json",
+                success: function(data) {
+                    try {
+                        console.log(data);
+                        var id = data["0"].id;
+                        console.log(id);
+                        $.ajax({
+                            url: "./api3",
+                            type: "POST",
+                            data: {
+                                "URL": url1 + id + api_key
+                            },
+                            crossDomain: true,
+                            dataType: "json",
+                            success: function(data) {
                                 document.getElementById("fsCell66672188").hidden = false;
-                            } catch (err) {
+                                console.log(data);
+                                if (data.products["0"].productFormats["0"].assets) {
+                                    console.log("searching for photos");
+                                    var video = data.products["0"].productFormats["0"].assets;
+                                    for (i = 0; i < video.length; i++) {
+                                        if (video[i].shotCode.code == "116") {
+                                            var photo = video[i].url;
+                                            console.log(photo);
+                                            document.getElementById("field66647668").value = photo;
+                                        }
+                                    }
+                                } else {}
                                 try {
-                                    var video1 = data.products[9].productFormats[1].assets["0"].url;
+                                    var video1 = data.products[8].productFormats[0].assets["0"].url;
                                     console.log(video1);
                                     document.getElementById("aliciasucks").src = video1;
                                     var video = document.getElementById("alicia");
@@ -721,20 +661,29 @@
                                     video.play();
                                     document.getElementById("fsCell66672188").hidden = false;
                                 } catch (err) {
-                                    console.log("no videos");
-                                    document.getElementById("fsCell66672188").hidden = true;
+                                    try {
+                                        var video1 = data.products[9].productFormats[1].assets["0"].url;
+                                        console.log(video1);
+                                        document.getElementById("aliciasucks").src = video1;
+                                        var video = document.getElementById("alicia");
+                                        video.load();
+                                        video.play();
+                                        document.getElementById("fsCell66672188").hidden = false;
+                                    } catch (err) {
+                                        console.log("no videos");
+                                        document.getElementById("fsCell66672188").hidden = true;
+                                    }
                                 }
                             }
-                        }
-                    })
-                } catch (err) {
-                    console.log(error);
+                        })
+                    } catch (err) {
+                        console.log(error);
+                    }
                 }
-            }
-        })
-    }
+            })
+        }
 
-    $(document).ready(function() {
+
         $("#field66764231").change(function() {
             document.getElementById("fsCell66764231").classList.remove("highlight");
             var VIN = document.getElementById("field66402009").value;
@@ -812,10 +761,10 @@
                 }
             })
         })
-    });
 
 
-    $(document).ready(function() {
+
+
         $("#field66402011").change(function() {
             document.getElementById("field66765401").disabled = false;
             if (document.getElementById("field66402011").value != "Trailer" && document.getElementById("field66402011").value != "Other") {
@@ -826,16 +775,11 @@
                 console.log('trailer');
             } else {}
         })
-    })
 
-    $(document).ready(function() {
+
+
         $("#field66401969").change(function() {
             console.log("flag");
-            /*var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-                     navigator.userAgent &&
-                     navigator.userAgent.indexOf('CriOS') == -1 &&
-                     navigator.userAgent.indexOf('FxiOS') == -1;
-            console.log(isSafari);*/
             $("#fsCell66570865").css("background-color", "rgba(255,255,255, 1)");
             document.getElementById("fsCell66672188").hidden = true;
             document.getElementById("fsCell67343300").hidden = true;
@@ -848,17 +792,17 @@
             document.getElementById("fsCell66763384").hidden = true;
             document.getElementById("fsCell66715894").hidden = true;
         })
-    })
 
-    $(document).ready(function() {
+
+
         $("#field66401971").change(function() {
             console.log("flag");
             if (document.getElementById("field66401971_2").checked) {
                 document.getElementById("field66777198").value = 0.00;
             }
         })
-    })
-    $(document).ready(function() {
+
+
         $("#field66765353").change(function() {
             console.log("flag");
             var zip;
@@ -889,25 +833,25 @@
             console.log(total);
             document.getElementById("field66777864").value = total;
         })
-    })
 
-    $(document).ready(function() {
+
+
         $("#field66765464_2").change(function() {
             if (this.checked) {
                 document.getElementById("field66765463").value = "None";
             }
         })
-    })
 
-    $(document).ready(function() {
+
+
         $("#field66765464_1").change(function() {
             if (this.checked) {
                 document.getElementById("field66765463").value = "";
             }
         })
-    })
 
-    $(document).ready(function() {
+
+
         $("#field66402026").on("input", function() {
             if (this.value != "") {
                 console.log("show options");
@@ -919,139 +863,139 @@
                 document.getElementById("fsCell66715894").hidden = true;
             }
         })
-    })
-    $(document).ready(function() {
+
+
         $("#field66765441_2").change(function() {
             if (this.checked) {
                 document.getElementById("field66765463").value = "None";
             }
         })
-    })
-    $(document).ready(function() {
+
+
         $("#field66765441_1").change(function() {
             if (this.checked) {
                 document.getElementById("field66765463").value = "";
             }
         })
-    })
 
-    function get_reg(weight) {
-        var fee;
-        if (weight > 0 && weight <= 1650) {
-            fee = 26.00;
-        } else if (weight > 1651 && weight <= 1750) {
-            fee = 27.50;
-        } else if (weight > 1751 && weight <= 1850) {
-            fee = 29.00;
-        } else if (weight > 1851 && weight <= 1950) {
-            fee = 31.00;
-        } else if (weight > 1951 && weight <= 2050) {
-            fee = 32.50;
-        } else if (weight > 2051 && weight <= 2150) {
-            fee = 34.00;
-        } else if (weight > 2151 && weight <= 2250) {
-            fee = 35.50;
-        } else if (weight > 2251 && weight <= 2350) {
-            fee = 37.50;
-        } else if (weight > 2351 && weight <= 2450) {
-            fee = 39.00;
-        } else if (weight > 2451 && weight <= 2550) {
-            fee = 40.50;
-        } else if (weight > 2551 && weight <= 2650) {
-            fee = 42.00;
-        } else if (weight > 2651 && weight <= 2750) {
-            fee = 43.50;
-        } else if (weight > 2751 && weight <= 2850) {
-            fee = 45.50;
-        } else if (weight > 2851 && weight <= 2950) {
-            fee = 47.00;
-        } else if (weight > 2951 && weight <= 3050) {
-            fee = 48.50;
-        } else if (weight > 3051 && weight <= 3150) {
-            fee = 50.00;
-        } else if (weight > 3151 && weight <= 3250) {
-            fee = 52.00;
-        } else if (weight > 3251 && weight <= 3350) {
-            fee = 53.50;
-        } else if (weight > 3351 && weight <= 3450) {
-            fee = 55.00;
-        } else if (weight > 3451 && weight <= 3550) {
-            fee = 56.50;
-        } else if (weight > 3551 && weight <= 3650) {
-            fee = 59.00;
-        } else if (weight > 3651 && weight <= 3750) {
-            fee = 61.50;
-        } else if (weight > 3751 && weight <= 3850) {
-            fee = 64.00;
-        } else if (weight > 3851 && weight <= 3950) {
-            fee = 66.50;
-        } else if (weight > 3951 && weight <= 4050) {
-            fee = 69.00;
-        } else if (weight > 4051 && weight <= 4150) {
-            fee = 71.00;
-        } else if (weight > 4151 && weight <= 4250) {
-            fee = 73.50;
-        } else if (weight > 4251 && weight <= 4350) {
-            fee = 76.00;
-        } else if (weight > 4351 && weight <= 4450) {
-            fee = 78.50;
-        } else if (weight > 4451 && weight <= 4550) {
-            fee = 81.00;
-        } else if (weight > 4551 && weight <= 4650) {
-            fee = 83.50;
-        } else if (weight > 4651 && weight <= 4750) {
-            fee = 85.50;
-        } else if (weight > 4751 && weight <= 4850) {
-            fee = 88.00;
-        } else if (weight > 4851 && weight <= 4950) {
-            fee = 90.50;
-        } else if (weight > 4951 && weight <= 5050) {
-            fee = 93.00;
-        } else if (weight > 5051 && weight <= 5150) {
-            fee = 95.50;
-        } else if (weight > 5151 && weight <= 5250) {
-            fee = 98.00;
-        } else if (weight > 5251 && weight <= 5350) {
-            fee = 100.50;
-        } else if (weight > 5351 && weight <= 5450) {
-            fee = 102.50;
-        } else if (weight > 5451 && weight <= 5550) {
-            fee = 105.00;
-        } else if (weight > 5551 && weight <= 5650) {
-            fee = 107.50;
-        } else if (weight > 5651 && weight <= 5750) {
-            fee = 110.00;
-        } else if (weight > 5751 && weight <= 5850) {
-            fee = 112.50;
-        } else if (weight > 5851 && weight <= 5950) {
-            fee = 115.00;
-        } else if (weight > 5951 && weight <= 6050) {
-            fee = 117.00;
-        } else if (weight > 6051 && weight <= 6150) {
-            fee = 119.50;
-        } else if (weight > 6151 && weight <= 6250) {
-            fee = 122.00;
-        } else if (weight > 6251 && weight <= 6350) {
-            fee = 124.50;
-        } else if (weight > 6351 && weight <= 6450) {
-            fee = 127.00;
-        } else if (weight > 6451 && weight <= 6550) {
-            fee = 129.50;
-        } else if (weight > 6551 && weight <= 6650) {
-            fee = 131.50;
-        } else if (weight > 6651 && weight <= 6750) {
-            fee = 134.00;
-        } else if (weight > 6751 && weight <= 6850) {
-            fee = 136.50;
-        } else if (weight > 6851 && weight <= 6950) {
-            fee = 139.00;
-        } else if (weight >= 6951) {
-            fee = 140.00;
-        } else {}
-        return fee;
-    }
 
-    $(document).ready(function() {
+        function get_reg(weight) {
+            var fee;
+            if (weight > 0 && weight <= 1650) {
+                fee = 26.00;
+            } else if (weight > 1651 && weight <= 1750) {
+                fee = 27.50;
+            } else if (weight > 1751 && weight <= 1850) {
+                fee = 29.00;
+            } else if (weight > 1851 && weight <= 1950) {
+                fee = 31.00;
+            } else if (weight > 1951 && weight <= 2050) {
+                fee = 32.50;
+            } else if (weight > 2051 && weight <= 2150) {
+                fee = 34.00;
+            } else if (weight > 2151 && weight <= 2250) {
+                fee = 35.50;
+            } else if (weight > 2251 && weight <= 2350) {
+                fee = 37.50;
+            } else if (weight > 2351 && weight <= 2450) {
+                fee = 39.00;
+            } else if (weight > 2451 && weight <= 2550) {
+                fee = 40.50;
+            } else if (weight > 2551 && weight <= 2650) {
+                fee = 42.00;
+            } else if (weight > 2651 && weight <= 2750) {
+                fee = 43.50;
+            } else if (weight > 2751 && weight <= 2850) {
+                fee = 45.50;
+            } else if (weight > 2851 && weight <= 2950) {
+                fee = 47.00;
+            } else if (weight > 2951 && weight <= 3050) {
+                fee = 48.50;
+            } else if (weight > 3051 && weight <= 3150) {
+                fee = 50.00;
+            } else if (weight > 3151 && weight <= 3250) {
+                fee = 52.00;
+            } else if (weight > 3251 && weight <= 3350) {
+                fee = 53.50;
+            } else if (weight > 3351 && weight <= 3450) {
+                fee = 55.00;
+            } else if (weight > 3451 && weight <= 3550) {
+                fee = 56.50;
+            } else if (weight > 3551 && weight <= 3650) {
+                fee = 59.00;
+            } else if (weight > 3651 && weight <= 3750) {
+                fee = 61.50;
+            } else if (weight > 3751 && weight <= 3850) {
+                fee = 64.00;
+            } else if (weight > 3851 && weight <= 3950) {
+                fee = 66.50;
+            } else if (weight > 3951 && weight <= 4050) {
+                fee = 69.00;
+            } else if (weight > 4051 && weight <= 4150) {
+                fee = 71.00;
+            } else if (weight > 4151 && weight <= 4250) {
+                fee = 73.50;
+            } else if (weight > 4251 && weight <= 4350) {
+                fee = 76.00;
+            } else if (weight > 4351 && weight <= 4450) {
+                fee = 78.50;
+            } else if (weight > 4451 && weight <= 4550) {
+                fee = 81.00;
+            } else if (weight > 4551 && weight <= 4650) {
+                fee = 83.50;
+            } else if (weight > 4651 && weight <= 4750) {
+                fee = 85.50;
+            } else if (weight > 4751 && weight <= 4850) {
+                fee = 88.00;
+            } else if (weight > 4851 && weight <= 4950) {
+                fee = 90.50;
+            } else if (weight > 4951 && weight <= 5050) {
+                fee = 93.00;
+            } else if (weight > 5051 && weight <= 5150) {
+                fee = 95.50;
+            } else if (weight > 5151 && weight <= 5250) {
+                fee = 98.00;
+            } else if (weight > 5251 && weight <= 5350) {
+                fee = 100.50;
+            } else if (weight > 5351 && weight <= 5450) {
+                fee = 102.50;
+            } else if (weight > 5451 && weight <= 5550) {
+                fee = 105.00;
+            } else if (weight > 5551 && weight <= 5650) {
+                fee = 107.50;
+            } else if (weight > 5651 && weight <= 5750) {
+                fee = 110.00;
+            } else if (weight > 5751 && weight <= 5850) {
+                fee = 112.50;
+            } else if (weight > 5851 && weight <= 5950) {
+                fee = 115.00;
+            } else if (weight > 5951 && weight <= 6050) {
+                fee = 117.00;
+            } else if (weight > 6051 && weight <= 6150) {
+                fee = 119.50;
+            } else if (weight > 6151 && weight <= 6250) {
+                fee = 122.00;
+            } else if (weight > 6251 && weight <= 6350) {
+                fee = 124.50;
+            } else if (weight > 6351 && weight <= 6450) {
+                fee = 127.00;
+            } else if (weight > 6451 && weight <= 6550) {
+                fee = 129.50;
+            } else if (weight > 6551 && weight <= 6650) {
+                fee = 131.50;
+            } else if (weight > 6651 && weight <= 6750) {
+                fee = 134.00;
+            } else if (weight > 6751 && weight <= 6850) {
+                fee = 136.50;
+            } else if (weight > 6851 && weight <= 6950) {
+                fee = 139.00;
+            } else if (weight >= 6951) {
+                fee = 140.00;
+            } else {}
+            return fee;
+        }
+
+
         $("#field66401992-state").change(function() {
             document.getElementById("state_error").classList.remove("highlight");
             document.getElementById("state_final").classList.remove("highlight");
@@ -1098,6 +1042,16 @@
                 console.log("no nepotism");
             }
         })
+        $('input[type=radio][name=field66401971]').change(function() {
+            console.log("sales tax?");
+            if (document.getElementById('field66401971_2').checked) {
+                document.getElementById("field66793330").value = "Yes";
+                console.log("nope");
+            } else {
+                document.getElementById("field66793330").value = "No";
+                console.log("maybe");
+            }
+        })
 
         $('input[type=radio][name=field66401997]').change(function() {
             document.getElementById("state_error").classList.remove("highlight");
@@ -1125,457 +1079,175 @@
                 document.getElementById("state_final").innerHTML = "";
             }
         })
-    })
 
-    function tax_rate(zipcode) {
-        var url = "https://api.taxjar.com/v2/rates/" + zipcode;
-        var number;
-        $.ajax({
-            url: url,
-            type: "GET",
-            async: false,
-            headers: {
-                "Authorization": `Token token="96445d401e8b752708705a353b9e0490"`
-            },
-            contentType: "application/x-www-form-urlencoded",
-            success: function(data) {
-                console.log(data);
-                var rate = data.rate.combined_rate;
-                console.log(rate);
-                number = Number(rate);
-                console.log(number);
-            }
-        })
-        return number;
-    }
 
-    var placeSearch;
- var done1 = false;
-var done2 = false;
- var done3 = false;
-var done4 = false;
-    $(document).ready(function() {
+        function tax_rate(zipcode) {
+            var url = "https://api.taxjar.com/v2/rates/" + zipcode;
+            var number;
+            $.ajax({
+                url: url,
+                type: "GET",
+                async: false,
+                headers: {
+                    "Authorization": `Token token="acf8c23bf1327aacf6b1a18965bfd5be"`
+                },
+                contentType: "application/x-www-form-urlencoded",
+                success: function(data) {
+                    console.log(data);
+                    var rate = data.rate.combined_rate;
+                    console.log(rate);
+                    number = Number(rate);
+                    console.log(number);
+                }
+            })
+            return number;
+        }
+
+        var placeSearch;
+        var done1 = false;
+        var done2 = false;
+        var done3 = false;
+        var done4 = false;
+
         $("#field66401998-address").on('input click', function() {
-             if (!done1) {
+            if (!done1) {
                 console.log("done");
-                initAutocomplete_physical();
+                initAutocomplete('field66401998-address', 'field66401998-address2', 'field66401998-city', 'field66401998-state', 'field66818042', 'field66401998-zip');
                 done1 = true;
             }
         })
-    })
-    var done2 = false;
-    $(document).ready(function() {
+
+
         $("#field66401982-address").on('input click', function() {
             if (!done2) {
                 console.log("done");
-                initAutocomplete_owner();
+                initAutocomplete('field66401982-address', 'field66401982-address2', 'field66401982-city', 'field66401982-state', 'field66401983', 'field66401982-zip');
                 done2 = true;
             }
         })
-    })
-    $(document).ready(function() {
+
+
         $("#field66402046-address").on('input click', function() {
-             if (!done3) {
+            if (!done3) {
                 console.log("done");
-                initAutocomplete_seller();
+                initAutocomplete('field66402046-address', 'field66402046-address2', 'field66402046-city', 'field66402046-state', 'field66402047', 'field66402046-zip');
                 done3 = true;
             }
         })
-    })
-    $(document).ready(function() {
+
+
         $("#field66401992-address").on('input click', function() {
-             if (!done4) {
+            if (!done4) {
                 console.log("done");
-                initAutocomplete();
+                initAutocomplete('field66401992-address', 'field66401992-address2', 'field66401992-city', 'field66401992-state', 'field66498604', 'field66401992-zip');
                 done4 = true;
             }
         })
-    })
-    var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        administrative_area_level_2: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-    };
 
-    function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        var autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('field66401992-address')), {
-                types: ['geocode']
-            });
+        var componentForm = {
+            street_number: 'short_name',
+            route: 'long_name',
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            administrative_area_level_2: 'short_name',
+            country: 'long_name',
+            postal_code: 'short_name'
+        };
 
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', function() {
-            fillInAddress(autocomplete);
-        });
-    }
-
-    function initAutocomplete_physical() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        var autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('field66401998-address')), {
-                types: ['geocode']
-            });
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', function() {
-            fillInAddress_physical(autocomplete);
-        });
-    }
-
-    function initAutocomplete_owner() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        var autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('field66401982-address')), {
-                types: ['geocode']
-            });
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', function() {
-            fillInAddress_owner(autocomplete);
-        });
-    }
-
-    function initAutocomplete_seller() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        var autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('field66402046-address')), {
-                types: ['geocode']
-            });
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', function() {
-            fillInAddress_seller(autocomplete);
-        });
-    }
-
-    function fillInAddress(autocomplete) {
-        var place = autocomplete.getPlace();
-        console.log(place);
-        document.getElementById('field66401992-address').id = 'street_number';
-        document.getElementById('field66401992-address2').id = 'route';
-        document.getElementById('field66401992-city').id = 'locality';
-        document.getElementById('field66401992-state').id = 'administrative_area_level_1';
-        document.getElementById('field66498604').id = 'administrative_area_level_2';
-        document.getElementById('field66401992-zip').id = 'postal_code';
-        // Get the place details from the autocomplete object.
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            console.log(addressType);
-
-            if (componentForm[addressType] || addressType == "sublocality_level_1") {
-                if (addressType == "route" && place.address_components[0].types[0] == "street_number") {
-                    var val1 = place.address_components[i][componentForm[addressType]];
-                    var val2 = place.address_components[0][componentForm["street_number"]];
-                    var val3 = val2 + " " + val1;
-                    console.log(val3);
-                    document.getElementById("street_number").value = val3;
-                } else if (addressType == "route" && place.address_components[0].types[0] != "street_number") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    console.log(val);
-                    console.log("No!!!")
-                    document.getElementById("street_number").value = val;
-                } else if (addressType == "administrative_area_level_2") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    var lastIndex = val.lastIndexOf(" ");
-                    val = val.substring(0, lastIndex);
-                    document.getElementById(addressType).value = val;
-                } else if (addressType == "sublocality_level_1") {
-                    console.log("sublocality");
-                    var val = place.address_components[i]["long_name"];
-                    document.getElementById("locality").value = val;
-                } else {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById(addressType).value = val;
-                }
-            }
-        }
-        document.getElementById('street_number').id = 'field66401992-address';
-        document.getElementById('route').id = 'field66401992-address2';
-        document.getElementById('locality').id = 'field66401992-city';
-        document.getElementById('administrative_area_level_1').id = 'field66401992-state';
-        document.getElementById('administrative_area_level_2').id = 'field66498604';
-        document.getElementById('postal_code').id = 'field66401992-zip';
-        $("#field66401992-state").trigger('change');
-    }
-
-    function fillInAddress_physical(autocomplete) {
-        var place = autocomplete.getPlace();
-        console.log(place);
-        document.getElementById('field66401998-address').id = 'street_number';
-        document.getElementById('field66401998-address2').id = 'route';
-        document.getElementById('field66401998-city').id = 'locality';
-        document.getElementById('field66401998-state').id = 'administrative_area_level_1';
-        document.getElementById('field66818042').id = 'administrative_area_level_2';
-        document.getElementById('field66401998-zip').id = 'postal_code';
-        // Get the place details from the autocomplete object.
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            console.log(addressType);
-            if (componentForm[addressType] || addressType == "sublocality_level_1") {
-                if (addressType == "route" && place.address_components[0].types[0] == "street_number") {
-                    var val1 = place.address_components[i][componentForm[addressType]];
-                    var val2 = place.address_components[0][componentForm["street_number"]];
-                    var val3 = val2 + " " + val1;
-                    console.log(val3);
-                    document.getElementById("street_number").value = val3;
-                } else if (addressType == "route" && place.address_components[0].types[0] != "street_number") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    console.log(val);
-                    console.log("No!!!")
-                    document.getElementById("street_number").value = val;
-                } else if (addressType == "administrative_area_level_2") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    var lastIndex = val.lastIndexOf(" ");
-                    val = val.substring(0, lastIndex);
-                    document.getElementById(addressType).value = val;
-                } else if (addressType == "sublocality_level_1") {
-                    console.log("sublocality");
-                    var val = place.address_components[i]["long_name"];
-                    document.getElementById("locality").value = val;
-                } else {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById(addressType).value = val;
-                }
-            }
-        }
-        document.getElementById('street_number').id = 'field66401998-address';
-        document.getElementById('route').id = 'field66401998-address2';
-        document.getElementById('locality').id = 'field66401998-city';
-        document.getElementById('administrative_area_level_1').id = 'field66401998-state';
-        document.getElementById('administrative_area_level_2').id = 'field66818042';
-        document.getElementById('postal_code').id = 'field66401998-zip';
-        $("#field66401998-state").trigger('change');
-    }
-
-    function fillInAddress_owner(autocomplete) {
-        var place = autocomplete.getPlace();
-        console.log(place);
-        document.getElementById('field66401982-address').id = 'street_number';
-        document.getElementById('field66401982-address2').id = 'route';
-        document.getElementById('field66401982-city').id = 'locality';
-        document.getElementById('field66401982-state').id = 'administrative_area_level_1';
-        document.getElementById('field66401983').id = 'administrative_area_level_2';
-        document.getElementById('field66401982-zip').id = 'postal_code';
-        // Get the place details from the autocomplete object.
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            console.log(addressType);
-            if (componentForm[addressType] || addressType == "sublocality_level_1") {
-                if (addressType == "route" && place.address_components[0].types[0] == "street_number") {
-                    var val1 = place.address_components[i][componentForm[addressType]];
-                    var val2 = place.address_components[0][componentForm["street_number"]];
-                    var val3 = val2 + " " + val1;
-                    console.log(val3);
-                    document.getElementById("street_number").value = val3;
-                } else if (addressType == "route" && place.address_components[0].types[0] != "street_number") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    console.log(val);
-                    console.log("No!!!")
-                    document.getElementById("street_number").value = val;
-                } else if (addressType == "administrative_area_level_2") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    var lastIndex = val.lastIndexOf(" ");
-                    val = val.substring(0, lastIndex);
-                    document.getElementById(addressType).value = val;
-                } else if (addressType == "sublocality_level_1") {
-                    console.log("sublocality");
-                    var val = place.address_components[i]["long_name"];
-                    document.getElementById("locality").value = val;
-                } else {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById(addressType).value = val;
-                }
-            }
-        }
-        document.getElementById('street_number').id = 'field66401982-address';
-        document.getElementById('route').id = 'field66401982-address2';
-        document.getElementById('locality').id = 'field66401982-city';
-        document.getElementById('administrative_area_level_1').id = 'field66401982-state';
-        document.getElementById('administrative_area_level_2').id = 'field66401983';
-        document.getElementById('postal_code').id = 'field66401982-zip';
-    }
-
-    function fillInAddress_seller(autocomplete) {
-        var place = autocomplete.getPlace();
-        console.log(place);
-        document.getElementById('field66402046-address').id = 'street_number';
-        document.getElementById('field66402046-address2').id = 'route';
-        document.getElementById('field66402046-city').id = 'locality';
-        document.getElementById('field66402046-state').id = 'administrative_area_level_1';
-        document.getElementById('field66402047').id = 'administrative_area_level_2';
-        document.getElementById('field66402046-zip').id = 'postal_code';
-        // Get the place details from the autocomplete object.
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            console.log(addressType);
-            if (componentForm[addressType] || addressType == "sublocality_level_1") {
-                if (addressType == "route" && place.address_components[0].types[0] == "street_number") {
-                    var val1 = place.address_components[i][componentForm[addressType]];
-                    var val2 = place.address_components[0][componentForm["street_number"]];
-                    var val3 = val2 + " " + val1;
-                    console.log(val3);
-                    document.getElementById("street_number").value = val3;
-                } else if (addressType == "route" && place.address_components[0].types[0] != "street_number") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    console.log(val);
-                    console.log("No!!!")
-                    document.getElementById("street_number").value = val;
-                } else if (addressType == "administrative_area_level_2") {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    var lastIndex = val.lastIndexOf(" ");
-                    val = val.substring(0, lastIndex);
-                    document.getElementById(addressType).value = val;
-                } else if (addressType == "sublocality_level_1") {
-                    console.log("sublocality");
-                    var val = place.address_components[i]["long_name"];
-                    document.getElementById("locality").value = val;
-                } else {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById(addressType).value = val;
-                }
-            }
-        }
-
-        document.getElementById('street_number').id = 'field66402046-address';
-        document.getElementById('route').id = 'field66402046-address2';
-        document.getElementById('locality').id = 'field66402046-city';
-        document.getElementById('administrative_area_level_1').id = 'field66402046-state';
-        document.getElementById('administrative_area_level_2').id = 'field66402047';
-        document.getElementById('postal_code').id = 'field66402046-zip';
-    }
-
-
-    // Bias the autocomplete object to the user's geographical location,
-    // as supplied by the browser's 'navigator.geolocation' object.
-    function geolocate() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var geolocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                var circle = new google.maps.Circle({
-                    center: geolocation,
-                    radius: position.coords.accuracy
+        function initAutocomplete(street, route, city, state, county, zip) {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            var autocomplete = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */
+                (document.getElementById(street)), {
+                    types: ['geocode']
                 });
-                autocomplete.setBounds(circle.getBounds());
+
+            // When the user selects an address from the dropdown, populate the address
+            // fields in the form.
+            autocomplete.addListener('place_changed', function() {
+                fillInAddress(autocomplete, street, route, city, state, county, zip);
             });
         }
-    }
-    /*$(document).ready(function() {
-        $('#imageFile').change(function(evt) {
-          document.getElementById("label66402009").className = "loading8";
-          document.getElementById("verification").innerHTML = "";
-          document.getElementById("verification").classList.remove("fsValidationError");
-          var files = evt.target.files;
-          var file = files[0];
-          var img = document.createElement("img");
-          img.src = e.target.result;
 
-          var canvas = document.createElement("canvas");
-          var ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0);
 
-          var MAX_WIDTH = 1080;
-          var MAX_HEIGHT = 720;
-          var width = img.width;
-          var height = img.height;
+        function fillInAddress(autocomplete, street, route, city, state, county, zip) {
+            var place = autocomplete.getPlace();
+            console.log(place);
+            document.getElementById(street).id = 'street_number';
+            document.getElementById(route).id = 'route';
+            document.getElementById(city).id = 'locality';
+            document.getElementById(state).id = 'administrative_area_level_1';
+            document.getElementById(county).id = 'administrative_area_level_2';
+            document.getElementById(zip).id = 'postal_code';
+            // Get the place details from the autocomplete object.
+            for (var component in componentForm) {
+                document.getElementById(component).value = '';
+                document.getElementById(component).disabled = false;
+            }
 
-          if (width > height) {
-              if (width > MAX_WIDTH) {
-                  height *= MAX_WIDTH / width;
-                  width = MAX_WIDTH;
-              }
-          } else {
-              if (height > MAX_HEIGHT) {
-                  width *= MAX_HEIGHT / height;
-                  height = MAX_HEIGHT;
-              }
-          }
-          canvas.width = width;
-          canvas.height = height;
-          var ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0, width, height);
-          if (file) {
-      var formData = new FormData();
-        formData.append("ifile", file);
-                          url="http://www.recognition.ws/vinocr/v1?accesscode=26284d01-bdb9-497e-9c30-3b2587a1385d";
-                          $.ajax({
-                                 url: url,
-                                 type: "POST",
-                                 data: formData,
-                                 contentType: false,
-                                 processData: false,
-                                 success: function(data) {
-                                   try{
-                                   console.log(data);
-                                   console.log(typeof data);
-                                  data = data.substring(data.indexOf(">") + 1);
-                                  console.log(data);
-                                  data = data.substring(data.indexOf(">") + 1);
-                                  console.log(data);
-                                  data = data.substring(data.indexOf(">") + 1);
-                                  console.log(data);
-                                  var VIN= data.substr(0, data.indexOf('<'));
-                                  console.log(VIN);
-                                   document.getElementById("field66402009").value=VIN;
-                                   $("#field66402009").trigger('input');
-                                 } catch {
-                                   document.getElementById("verification").innerHTML = "Couldn't see the numbers. Try again or input manually.";
-                                   document.getElementById("verification").classList.add("fsValidationError");
-                                   document.getElementById("label66402009").classList.remove("loading8");
-                                 }
-                                 }
-                               })
-                   }
-                 })
-               })*/
-    $(document).ready(function() {
+            // Get each component of the address from the place details
+            // and fill the corresponding field on the form.
+            for (var i = 0; i < place.address_components.length; i++) {
+                var addressType = place.address_components[i].types[0];
+                console.log(addressType);
+
+                if (componentForm[addressType] || addressType == "sublocality_level_1") {
+                    if (addressType == "route" && place.address_components[0].types[0] == "street_number") {
+                        var val1 = place.address_components[i][componentForm[addressType]];
+                        var val2 = place.address_components[0][componentForm["street_number"]];
+                        var val3 = val2 + " " + val1;
+                        console.log(val3);
+                        document.getElementById("street_number").value = val3;
+                    } else if (addressType == "route" && place.address_components[0].types[0] != "street_number") {
+                        var val = place.address_components[i][componentForm[addressType]];
+                        console.log(val);
+                        console.log("No!!!")
+                        document.getElementById("street_number").value = val;
+                    } else if (addressType == "administrative_area_level_2") {
+                        var val = place.address_components[i][componentForm[addressType]];
+                        var lastIndex = val.lastIndexOf(" ");
+                        val = val.substring(0, lastIndex);
+                        document.getElementById(addressType).value = val;
+                    } else if (addressType == "sublocality_level_1") {
+                        console.log("sublocality");
+                        var val = place.address_components[i]["long_name"];
+                        document.getElementById("locality").value = val;
+                    } else {
+                        var val = place.address_components[i][componentForm[addressType]];
+                        document.getElementById(addressType).value = val;
+                    }
+                }
+            }
+            document.getElementById('street_number').id = street;
+            document.getElementById('route').id = route;
+            document.getElementById('locality').id = city;
+            document.getElementById('administrative_area_level_1').id = state;
+            document.getElementById('administrative_area_level_2').id = county;
+            document.getElementById('postal_code').id = zip;
+            var state_hastag = "#" + state;
+            $(state_hastag).trigger('change');
+        }
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var geolocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                        center: geolocation,
+                        radius: position.coords.accuracy
+                    });
+                    autocomplete.setBounds(circle.getBounds());
+                });
+            }
+        }
+
+
         $('#imageFile').change(function(evt) {
             document.getElementById("verification").innerHTML = "";
             document.getElementById("verification").classList.remove("fsValidationError");
@@ -1598,309 +1270,311 @@ var done4 = false;
                 ResizeImage();
             }, 3000);
         });
-    });
 
-    function ResizeImage() {
-        if (window.File && window.FileReader && window.FileList && window.Blob) {
-            var filesToUploads = document.getElementById('imageFile').files;
-            var file = filesToUploads[0];
-            if (file) {
 
-                var reader = new FileReader();
-                // Set the image once loaded into file reader
-                reader.onload = function(e) {
+        function ResizeImage() {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var filesToUploads = document.getElementById('imageFile').files;
+                var file = filesToUploads[0];
+                if (file) {
 
-                    var img = document.createElement("img");
-                    img.src = e.target.result;
+                    var reader = new FileReader();
+                    // Set the image once loaded into file reader
+                    reader.onload = function(e) {
 
-                    var canvas = document.createElement("canvas");
-                    var ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0);
+                        var img = document.createElement("img");
+                        img.src = e.target.result;
 
-                    var MAX_WIDTH = 1080;
-                    var MAX_HEIGHT = 720;
-                    var width = img.width;
-                    var height = img.height;
+                        var canvas = document.createElement("canvas");
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0);
 
-                    if (width > height) {
-                        if (width > MAX_WIDTH) {
-                            height *= MAX_WIDTH / width;
-                            width = MAX_WIDTH;
-                        }
-                    } else {
-                        if (height > MAX_HEIGHT) {
-                            width *= MAX_HEIGHT / height;
-                            height = MAX_HEIGHT;
-                        }
-                    }
-                    canvas.width = width;
-                    canvas.height = height;
-                    var ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0, width, height);
+                        var MAX_WIDTH = 1080;
+                        var MAX_HEIGHT = 720;
+                        var width = img.width;
+                        var height = img.height;
 
-                    str = canvas.toDataURL(file.type);
-                    console.log(str);
-                    var src = str.substr(str.indexOf(",") + 1);
-                    var url = "api2";
-                    console.log("making call to get image data");
-                    try {
-                        $.ajax({
-                            url: url,
-                            type: "POST",
-                            data: {
-                                'SRC': src
-                            },
-                            contentType: "application/x-www-form-urlencoded",
-                            crossDomain: true,
-                            dataType: "json",
-                            headers: {
-                                'Access-Control-Allow-Origin': true
-                            },
-                            success: function(data) {
-                                try {
-                                    console.log(data.responses[0]);
-                                    var text = data.responses[0].textAnnotations[0].description;
-                                    console.log(text);
-                                    //text = text.replace(/\s+/g, '');
-                                    var text2 = text;
-                                    var val = text2.replace(/\D/g, ' ');
-                                    val = val.replace(/ +(?= )/g, '');
-                                    console.log(val);
-                                    var split = val.split(" ");
-                                    console.log(split);
-                                    for (i = 0; i < split.length; i++) {
-                                        console.log("flag");
-                                        if (split[i].length > 5) {
-                                            var long_num = split[i];
-                                            var six = long_num.substring(split[i].length - 6, split[i].length);
-                                        }
-                                    }
-                                    console.log(six);
-                                    src = text.replace(/\s+/g, '');
-                                    console.log(src);
-                                    var n = src.indexOf(six);
-                                    console.log(n);
-                                    var value = n - 11;
-                                    var get = src.substring(value, n);
-                                    console.log(get);
-                                    document.getElementById("field66402009").value = get + six;
-                                    console.log(get + six);
-                                    $("#field66402009").trigger('input');
-                                } catch (err) {
-                                    document.getElementById("verification").innerHTML = "Couldn't see the numbers. Try again or input manually.";
-                                    document.getElementById("verification").classList.add("fsValidationError");
-                                    document.getElementById("label66402009").classList.remove("loading8");
-                                }
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height *= MAX_WIDTH / width;
+                                width = MAX_WIDTH;
                             }
-                        })
-                    } catch (err) {
-                        document.getElementById("verification").innerHTML = "Couldn't see the numbers. Try again or input manually.";
-                        document.getElementById("verification").classList.add("fsValidationError");
-                        document.getElementById("label66402009").classList.remove("loading8");
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width *= MAX_HEIGHT / height;
+                                height = MAX_HEIGHT;
+                            }
+                        }
+                        canvas.width = width;
+                        canvas.height = height;
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        str = canvas.toDataURL(file.type);
+                        console.log(str);
+                        var src = str.substr(str.indexOf(",") + 1);
+                        var url = "api2";
+                        console.log("making call to get image data");
+                        try {
+                            $.ajax({
+                                url: url,
+                                type: "POST",
+                                data: {
+                                    'SRC': src
+                                },
+                                contentType: "application/x-www-form-urlencoded",
+                                crossDomain: true,
+                                dataType: "json",
+                                headers: {
+                                    'Access-Control-Allow-Origin': true
+                                },
+                                success: function(data) {
+                                    try {
+                                        console.log(data.responses[0]);
+                                        var text = data.responses[0].textAnnotations[0].description;
+                                        console.log(text);
+                                        //text = text.replace(/\s+/g, '');
+                                        var text2 = text;
+                                        var val = text2.replace(/\D/g, ' ');
+                                        val = val.replace(/ +(?= )/g, '');
+                                        console.log(val);
+                                        var split = val.split(" ");
+                                        console.log(split);
+                                        for (i = 0; i < split.length; i++) {
+                                            console.log("flag");
+                                            if (split[i].length > 5) {
+                                                var long_num = split[i];
+                                                var six = long_num.substring(split[i].length - 6, split[i].length);
+                                            }
+                                        }
+                                        console.log(six);
+                                        src = text.replace(/\s+/g, '');
+                                        console.log(src);
+                                        var n = src.indexOf(six);
+                                        console.log(n);
+                                        var value = n - 11;
+                                        var get = src.substring(value, n);
+                                        console.log(get);
+                                        document.getElementById("field66402009").value = get + six;
+                                        console.log(get + six);
+                                        $("#field66402009").trigger('input');
+                                    } catch (err) {
+                                        document.getElementById("verification").innerHTML = "Couldn't see the numbers. Try again or input manually.";
+                                        document.getElementById("verification").classList.add("fsValidationError");
+                                        document.getElementById("label66402009").classList.remove("loading8");
+                                    }
+                                }
+                            })
+                        } catch (err) {
+                            document.getElementById("verification").innerHTML = "Couldn't see the numbers. Try again or input manually.";
+                            document.getElementById("verification").classList.add("fsValidationError");
+                            document.getElementById("label66402009").classList.remove("loading8");
+                        }
                     }
+                    reader.readAsDataURL(file);
+
                 }
-                reader.readAsDataURL(file);
 
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
             }
-
-        } else {
-            alert('The File APIs are not fully supported in this browser.');
         }
-    }
 
-    function get_use_tax(weight, county) {
-        console.log("use_tax");
-        var use_tax;
-        if (county == "Albany" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Albany" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Allegany" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Allegany" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Broome" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Broome" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Cattaraugus" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Cattaraugus" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Chautauqua" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Chautauqua" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Chemung" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Chemung" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Bronx") {
-            use_tax = 80.00;
-        } else if (county == "Kings") {
-            use_tax = 80.00;
-        } else if (county == "New York") {
-            use_tax = 80.00;
-        } else if (county == "Queens") {
-            use_tax = 80.00;
-        } else if (county == "Richmond") {
-            use_tax = 80.00;
-        } else if (county == "Clinton" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Clinton" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Cortland" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Cortland" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Dutchess" && weight <= 3500) {
-            use_tax = 60.00;
-        } else if (county == "Dutchess" && weight >= 3501) {
-            use_tax = 70.00;
-        } else if (county == "Erie" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Erie" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Franklin" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Franklin" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Genesee" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Genesee" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Livingston" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Livingston" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Madison" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Madison" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Monroe" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Monroe" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Montgomery" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Montgomery" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Nassau") {
-            use_tax = 80.00;
-        } else if (county == "Niagara" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Niagara" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Oneida" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Oneida" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Onondaga" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Onondaga" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Orange") {
-            use_tax = 50.00;
-        } else if (county == "Orleans" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Orleans" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Oswego" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Oswego" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Putnam" && weight <= 3500) {
-            use_tax = 60.00;
-        } else if (county == "Putnam" && weight >= 3501) {
-            use_tax = 70.00;
-        } else if (county == "Rensselear" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Rensselear" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Rockland" && weight <= 3500) {
-            use_tax = 60.00;
-        } else if (county == "Rockland" && weight >= 3501) {
-            use_tax = 70.00;
-        } else if (county == "Schenectady" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Schenectady" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Schuyler" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Schuyler" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Steuben" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Steuben" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Suffolk" && weight <= 3500) {
-            use_tax = 80.00;
-        } else if (county == "Suffolk" && weight >= 3501) {
-            use_tax = 110.00;
-        } else if (county == "Sullivan" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Sullivan" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Tioga" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Tioga" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Tompkins" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Tompkins" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Ulster" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Ulster" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Warren" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Warren" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Washington" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Washington" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Westchester" && weight <= 3500) {
-            use_tax = 80.00;
-        } else if (county == "Westchester" && weight >= 3501) {
-            use_tax = 110.00;
-        } else if (county == "Wyoming" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Wyoming" && weight >= 3501) {
-            use_tax = 20.00;
-        } else if (county == "Yates" && weight <= 3500) {
-            use_tax = 10.00;
-        } else if (county == "Yates" && weight >= 3501) {
-            use_tax = 20.00;
-        } else {
-            use_tax = 15.00;
+        function get_use_tax(weight, county) {
+            console.log("use_tax");
+            var use_tax;
+            if (county == "Albany" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Albany" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Allegany" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Allegany" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Broome" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Broome" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Cattaraugus" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Cattaraugus" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Chautauqua" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Chautauqua" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Chemung" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Chemung" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Bronx") {
+                use_tax = 80.00;
+            } else if (county == "Kings") {
+                use_tax = 80.00;
+            } else if (county == "New York") {
+                use_tax = 80.00;
+            } else if (county == "Queens") {
+                use_tax = 80.00;
+            } else if (county == "Richmond") {
+                use_tax = 80.00;
+            } else if (county == "Clinton" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Clinton" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Cortland" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Cortland" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Dutchess" && weight <= 3500) {
+                use_tax = 60.00;
+            } else if (county == "Dutchess" && weight >= 3501) {
+                use_tax = 70.00;
+            } else if (county == "Erie" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Erie" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Franklin" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Franklin" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Genesee" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Genesee" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Livingston" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Livingston" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Madison" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Madison" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Monroe" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Monroe" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Montgomery" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Montgomery" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Nassau") {
+                use_tax = 80.00;
+            } else if (county == "Niagara" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Niagara" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Oneida" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Oneida" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Onondaga" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Onondaga" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Orange") {
+                use_tax = 50.00;
+            } else if (county == "Orleans" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Orleans" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Oswego" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Oswego" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Putnam" && weight <= 3500) {
+                use_tax = 60.00;
+            } else if (county == "Putnam" && weight >= 3501) {
+                use_tax = 70.00;
+            } else if (county == "Rensselear" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Rensselear" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Rockland" && weight <= 3500) {
+                use_tax = 60.00;
+            } else if (county == "Rockland" && weight >= 3501) {
+                use_tax = 70.00;
+            } else if (county == "Schenectady" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Schenectady" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Schuyler" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Schuyler" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Steuben" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Steuben" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Suffolk" && weight <= 3500) {
+                use_tax = 80.00;
+            } else if (county == "Suffolk" && weight >= 3501) {
+                use_tax = 110.00;
+            } else if (county == "Sullivan" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Sullivan" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Tioga" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Tioga" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Tompkins" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Tompkins" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Ulster" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Ulster" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Warren" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Warren" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Washington" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Washington" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Westchester" && weight <= 3500) {
+                use_tax = 80.00;
+            } else if (county == "Westchester" && weight >= 3501) {
+                use_tax = 110.00;
+            } else if (county == "Wyoming" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Wyoming" && weight >= 3501) {
+                use_tax = 20.00;
+            } else if (county == "Yates" && weight <= 3500) {
+                use_tax = 10.00;
+            } else if (county == "Yates" && weight >= 3501) {
+                use_tax = 20.00;
+            } else {
+                use_tax = 15.00;
+            }
+            return use_tax;
         }
-        return use_tax;
-    }
 
-    function get_master_number() {
-        var master;
-        var type = document.getElementById("field66401969").options[document.getElementById("field66401969").selectedIndex].value;
-        console.log(type);
-        if (type=="Register a Vehicle" && !document.getElementById("field67898809_2").checked && !document.getElementById("field66401972_2").checked || type=="Transfer Plates to Another Vehicle") {
-            master = -1;
-        } else if (type=="Register a Vehicle" && document.getElementById("field67898809_2").checked && !document.getElementById("field66401972_2").checked) {
-            master = 0;
-        } else  {
-            if (document.getElementById("field66401972_2").checked) {
-                if (document.getElementById("field66402029_2").checked) {
-                    master = 2;
+        function get_master_number() {
+            var master;
+            var type = document.getElementById("field66401969").options[document.getElementById("field66401969").selectedIndex].value;
+            console.log(type);
+            if (type == "Register a Vehicle" && !document.getElementById("field67898809_2").checked && !document.getElementById("field66401972_2").checked && !document.getElementById("field66401973_2").checked || type == "Transfer Plates to Another Vehicle") {
+                master = -1;
+            } else if (type == "Register a Vehicle" && document.getElementById("field67898809_2").checked && !document.getElementById("field66401972_2").checked) {
+                master = 0;
+            } else {
+                if (document.getElementById("field66401972_2").checked) {
+                    if (document.getElementById("field66402029_2").checked) {
+                        master = 2;
+                    } else {
+                        master = 1;
+                    }
+                } else if (document.getElementById("field66401973_2").checked && !document.getElementById("field67898809_2").checked) {
+                    master = 3;
                 } else {
-                    master = 1;
+                    master = 4;
                 }
-            } else if (document.getElementById("field66401973_2").checked) {
-                master = 3;
             }
+            return master;
         }
-        return master;
-    }
-    $(document).ready(function() {
+
         $('#fsForm3123304').submit(function() {
             var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                 navigator.userAgent &&
@@ -1949,7 +1623,7 @@ var done4 = false;
                 total = Number(total) - Number(sales);
                 total = total.toFixed(2);
                 document.getElementById("field66777864").value = total;
-                document.getElementById("field66777198").value = "0";
+                document.getElementById("field66777198").value = 0.00;
             }
             console.log("reached3");
             var first_initial = document.getElementById('field66401988-first').value.charAt(0).toUpperCase();
@@ -1985,88 +1659,51 @@ var done4 = false;
             document.getElementById("field67366794").value = first_name_own + " " + last_name_own;
 
         })
-    })
 
-    $(document).ready(function() {
+
+
         $('#field67834247').change(function(evt) {
-               ID_Upload();
+            ID_Upload();
         })
-    })
 
-    function ID_Upload() {
-        if (window.File && window.FileReader && window.FileList && window.Blob) {
-            var filesToUploads = document.getElementById('field67834247').files;
-            var file = filesToUploads[0];
-            console.log(file);
-            console.log("got to function");
-            if (file) {
-                console.log("file loaded");
-                //var reader = new FileReader();
-                //Set the image once loaded into file reader
 
-                    /*var img = document.createElement("img");
-                    img.src = e.target.result;
-
-                    var canvas = document.createElement("canvas");
-                    var ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0);
-
-                    var MAX_WIDTH = 1080;
-                    var MAX_HEIGHT = 720;
-                    var width = img.width;
-                    var height = img.height;
-
-                    if (width > height) {
-                        if (width > MAX_WIDTH) {
-                            height *= MAX_WIDTH / width;
-                            width = MAX_WIDTH;
-                        }
-                    } else {
-                        if (height > MAX_HEIGHT) {
-                            width *= MAX_HEIGHT / height;
-                            height = MAX_HEIGHT;
-                        }
-                    }
-                    canvas.width = width;
-                    canvas.height = height;
-                    var ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0, width, height);*/
-                   var reader = new FileReader();
-                   reader.readAsDataURL(file);
-                   reader.onload = function () {
-                     var base64 = reader.result;
-                       var url5 = "./api5"
-                          $.ajax({
-                             url: url5,
-                                type: "GET",
-                                crossDomain: true,
-                                success: function(data) {
-                                    console.log(data);
-                                }
-                        });
-                       
-                       /* $.ajax({
+        function ID_Upload() {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var filesToUploads = document.getElementById('field67834247').files;
+                var file = filesToUploads[0];
+                console.log(file);
+                console.log("got to function");
+                if (file) {
+                    console.log("file loaded");
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function() {
+                        var base64 = reader.result;
+                        $.ajax({
                             url: "https://bws.bioid.com/extension/upload?" + jQuery.param({
                                 "tag": "up"
                             }),
                             method: "POST",
                             headers: {
-                                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmlkIjoiMmQyYWFkZDEtOTgxOC00N2VmLTkxMjEtMjdiMTgxNTI2ZmI2IiwiY2xudCI6IlBsYXlncm91bmQiLCJhcHAiOiI4MTAzMjM5NDAuNi5hcHAuYmlvaWQuY29tIiwidHJhaXRzIjozLCJ0YXNrIjo0MzU1LCJiY2lkIjoiYmlvaWQvNDIvNDA5MDQ3MzU2IiwibmJmIjoxNTM0ODYzODQ3LCJleHAiOjE1MzQ4NjQ0NDcsImlhdCI6MTUzNDg2Mzg0NywiaXNzIjoiQldTIiwiYXVkIjoiaHR0cHM6Ly9id3MuYmlvaWQuY29tIn0.gf3Cil7GB-L9PHHXPaDJZi1hmyQt-Qb8k0kYlH4lLxo"
+                                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmlkIjoiMDBhMDAwOGYtMDE1MC00ODRlLTlhZWUtZGIwMTQ4YjkzNDEzIiwiY2xudCI6IlJ1c2ggTXkgUGxhdGVzIiwiYXBwIjoiMTAwMTUxMzczNS5id3MuYmlvaWQuY29tIiwidHJhaXRzIjozLCJ0YXNrIjoyNTksImJjaWQiOiJid3MvMTE1NTgvMSIsIm5iZiI6MTUzNTA0NTE5OCwiZXhwIjoxNTM1MDQ1Nzk4LCJpYXQiOjE1MzUwNDUxOTgsImlzcyI6IkJXUyIsImF1ZCI6Imh0dHBzOi8vYndzLmJpb2lkLmNvbSJ9.-5UZg_3j7Us54WVvFtbxUVAjvwnmrym0FTEFOTD39SY"
                             },
                             data: base64,
-                        }).done(function (data, textStatus, jqXHR) {
-                          if (data.Accepted) {
-                            console.log("upload succeeded", data.Warnings);
-                          } else {
-                            console.log("upload error", data.Error);
-                          }
-                        });*/
-                   };
-                   reader.onerror = function (error) {
-                    console.log("error");
-                   };
+                        }).done(function(data, textStatus, jqXHR) {
+                            if (data.Accepted) {
+                                console.log("upload succeeded", data.Warnings);
+                                window.open('https://www.bioid.com/bws/uui?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmlkIjoiMDBhMDAwOGYtMDE1MC00ODRlLTlhZWUtZGIwMTQ4YjkzNDEzIiwiY2xudCI6IlJ1c2ggTXkgUGxhdGVzIiwiYXBwIjoiMTAwMTUxMzczNS5id3MuYmlvaWQuY29tIiwidHJhaXRzIjozLCJ0YXNrIjoyNTksImJjaWQiOiJid3MvMTE1NTgvMSIsIm5iZiI6MTUzNTA0NTE5OCwiZXhwIjoxNTM1MDQ1Nzk4LCJpYXQiOjE1MzUwNDUxOTgsImlzcyI6IkJXUyIsImF1ZCI6Imh0dHBzOi8vYndzLmJpb2lkLmNvbSJ9.-5UZg_3j7Us54WVvFtbxUVAjvwnmrym0FTEFOTD39SY&return_url=http://www.dmvformwizard.com/new-york/ny-form-wizard/', '_blank');
+                            } else {
+                                console.log("upload error", data.Error);
+                            }
+                        });
+                    };
 
+                    reader.onerror = function(error) {
+                        console.log("error");
+                    };
+
+                }
+            }
         }
-    }
-    }
+    })
 </script>
