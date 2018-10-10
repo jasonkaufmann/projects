@@ -212,6 +212,7 @@
                                                 document.getElementById("field66425137").value = year;
                                                 document.getElementById("field66425138").value = make.toUpperCase();
                                                 document.getElementById("field66425140").value = model.toUpperCase();
+                                                $("#fsCell66425140").css("width", "100%");
                                                 photo_video();
                                             },
                                             error: {}
@@ -762,7 +763,26 @@
             })
         })
 
-
+     $("#field66402021").change(function() {
+         var weight = this.value;
+        console.log(weight);
+        var fee = get_reg(weight);
+        document.getElementById("field66765320").disabled = false;
+        if (!document.getElementById("field66765320").value) {
+            document.getElementById("field66765320").value = fee;
+            var subtract = 0;
+            console.log(subtract);
+        } else {
+            var subtract = document.getElementById("field66765320").value;
+            console.log(Number(subtract));
+            document.getElementById("field66765320").value = fee;
+        }
+        var total = document.getElementById("field66777864").value
+        total = Number(total) + Number(fee) - subtract;
+        console.log(total);
+        document.getElementById("field66777864").value = total;
+        document.getElementById("field66402021").disabled = false;
+     })
 
 
         $("#field66402011").change(function() {
@@ -1089,7 +1109,7 @@
                 type: "GET",
                 async: false,
                 headers: {
-                    "Authorization": `Token token="acf8c23bf1327aacf6b1a18965bfd5be"`
+                    "Authorization": `Token token="5d6411843ba35540281d120804d590ff"`
                 },
                 contentType: "application/x-www-form-urlencoded",
                 success: function(data) {
