@@ -50,6 +50,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+     <Compile Include="Assets\Scripts\ValueUpdater.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -77,7 +78,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Scripts\ValueUpdater.cs" />
+     <Compile Include="Assets\Scripts\QuitButton.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -346,10 +347,10 @@
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a13/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="MiscUtil">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
      </Reference>
      <Reference Include="Antlr3.Runtime">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a13/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -703,112 +704,112 @@
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a13/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Animation.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InternalAPIEngineBridge.001">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.PixelPerfect">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Tilemap.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
      </Reference>
      <Reference Include="PsdPlugin">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.IK.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Psdimporter.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Path.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
      </Reference>
      <Reference Include="VSSettingsProvider">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InternalAPIEditorBridge.001">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.IK.Runtime">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Animation.Runtime">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.PixelPerfect.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Common.Runtime">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.SpriteShape.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Common.Editor">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.SpriteShape.Runtime">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>C:/Users/JPKSP/Downloads/Digital-Logic-Sim-main/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>C:/Users/JPKSP/projects/PIDVisualizer/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

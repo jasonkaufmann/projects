@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - GraphController
     - KnobController
+    - QuitButton
     - ValueUpdater
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -36,6 +37,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -65,33 +67,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 2154}
+      Script: {instanceID: 2156}
     - Class: 114
-      Script: {instanceID: 2614}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 4096}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 3876}
     - Class: 114
-      Script: {instanceID: 4494}
+      Script: {instanceID: 4100}
     - Class: 114
-      Script: {instanceID: 4708}
+      Script: {instanceID: 4212}
     - Class: 114
-      Script: {instanceID: 5180}
+      Script: {instanceID: 4498}
     - Class: 114
-      Script: {instanceID: 5268}
+      Script: {instanceID: 4712}
     - Class: 114
-      Script: {instanceID: 5870}
+      Script: {instanceID: 5184}
     - Class: 114
-      Script: {instanceID: 6050}
+      Script: {instanceID: 5272}
     - Class: 114
-      Script: {instanceID: 6382}
+      Script: {instanceID: 5874}
     - Class: 114
-      Script: {instanceID: 6696}
+      Script: {instanceID: 6054}
     - Class: 114
-      Script: {instanceID: 28348}
+      Script: {instanceID: 6386}
+    - Class: 114
+      Script: {instanceID: 6700}
+    - Class: 114
+      Script: {instanceID: 28380}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -513,6 +519,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ValueUpdater
   - hash:
       serializedVersion: 2
       Hash: 8b1fe5dfdcf943fb3b72506b9f19335f
@@ -1214,7 +1226,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ValueUpdater
+    className: QuitButton
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Scene.unity
