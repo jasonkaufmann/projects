@@ -1,4 +1,3 @@
-C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.csproj.AssemblyReference.cache
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\App.g.cs
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater_MarkupCompile.cache

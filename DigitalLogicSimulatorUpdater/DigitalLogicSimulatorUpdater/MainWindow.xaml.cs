@@ -36,7 +36,8 @@ namespace DigitalLogicSimulatorUpdater
                 switch(_status)
                 {
                     case LauncherStatus.ready:
-                        updateResult.Text = "Play";
+                        updateResult.Text = "Click above to run";
+                        checkForUpdate.Content = "Play";
                         break;
                     case LauncherStatus.failed:
                         updateResult.Text = "Update Failed - Retry";
@@ -64,10 +65,10 @@ namespace DigitalLogicSimulatorUpdater
             Trace.WriteLine(rootPath);
             Trace.WriteLine("FLAG!");
             versionFile = Path.Combine(rootPath, "version.txt");
-            gameExe = Path.Combine(rootPath, "DigitalLogicSimulator.exe");
+            gameExe = Path.Combine(rootPath,"Build", "DigitalLogicSimulator.exe");
             gameZip = Path.Combine(rootPath, "Build.zip");
         }
-
+        
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             this.MinWidth = this.Width;
@@ -124,7 +125,7 @@ namespace DigitalLogicSimulatorUpdater
                 }
 
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
-                webClient.DownloadFileAsync(new Uri("Game Zip Link"), gameZip, _onlineVersion);
+                webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulatorUpdater/DigitalLogicSimulatorUpdater/bin/Debug/net5.0-windows/Build.zip"), gameZip, _onlineVersion);
             }
             catch (Exception ex)
             {
