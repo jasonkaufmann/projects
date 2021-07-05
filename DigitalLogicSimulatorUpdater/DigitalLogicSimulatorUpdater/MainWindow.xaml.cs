@@ -61,9 +61,9 @@ namespace DigitalLogicSimulatorUpdater
             this.Loaded += MainWindow_Loaded;
 
             rootPath = Directory.GetCurrentDirectory();
-            Trace.WriteLine("FLAG!");
-            Trace.WriteLine(rootPath);
-            Trace.WriteLine("FLAG!");
+            //Trace.WriteLine("FLAG!");
+            //Trace.WriteLine(rootPath);
+            //Trace.WriteLine("FLAG!");
             versionFile = Path.Combine(rootPath, "version.txt");
             gameExe = Path.Combine(rootPath,"Build", "DigitalLogicSimulator.exe");
             gameZip = Path.Combine(rootPath, "Build.zip");
@@ -87,7 +87,7 @@ namespace DigitalLogicSimulatorUpdater
                 try
                 {
                     WebClient webClient = new WebClient();
-                    Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulatorUpdater/DigitalLogicSimulatorUpdater/bin/Debug/net5.0-windows/version.txt"));
+                    Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/version.txt"));
 
                     if(onlineVersion.IsDifferentThan(localVersion))
                     {
@@ -120,12 +120,12 @@ namespace DigitalLogicSimulatorUpdater
                 } else
                 {
                     Status = LauncherStatus.downloadingGame;
-                    _onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulatorUpdater/DigitalLogicSimulatorUpdater/bin/Debug/net5.0-windows/version.txt"));
+                    _onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/version.txt"));
 
                 }
 
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
-                webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulatorUpdater/DigitalLogicSimulatorUpdater/bin/Debug/net5.0-windows/Build.zip"), gameZip, _onlineVersion);
+                webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/Build.zip"), gameZip, _onlineVersion);
             }
             catch (Exception ex)
             {
@@ -168,7 +168,6 @@ namespace DigitalLogicSimulatorUpdater
                 ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
                 startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
                 Process.Start(startInfo);
-
                 Close();
             }
             else if(Status == LauncherStatus.failed)
