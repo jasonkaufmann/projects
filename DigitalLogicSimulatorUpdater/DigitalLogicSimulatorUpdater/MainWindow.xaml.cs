@@ -60,8 +60,12 @@ namespace DigitalLogicSimulatorUpdater
             this.Loaded += MainWindow_Loaded;
 
             rootPath = Directory.GetCurrentDirectory();
-            versionFile = System.IO.Path.Combine(rootPath, "version.txt");
-            gameExe = System.IO.Path.Combine(rootPath, "DigitalLogicSimulator.exe");
+            Trace.WriteLine("FLAG!");
+            Trace.WriteLine(rootPath);
+            Trace.WriteLine("FLAG!");
+            versionFile = Path.Combine(rootPath, "version.txt");
+            gameExe = Path.Combine(rootPath, "DigitalLogicSimulator.exe");
+            gameZip = Path.Combine(rootPath, "Build.zip");
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -78,6 +82,76 @@ namespace DigitalLogicSimulatorUpdater
             {
                 Version localVersion = new Version(File.ReadAllText(versionFile));
                 VersionText.Text = localVersion.ToString();
+
+                try
+                {
+                    WebClient webClient = new WebClient();
+                    Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulator/Assets/version.txt"));
+
+                    if(onlineVersion.IsDifferentThan(localVersion))
+                    {
+                        InstallGameFiles(true, onlineVersion);
+                    } else
+                    {
+                        Status = LauncherStatus.ready;
+                    }
+
+                } catch (Exception ex)
+                {
+                    Status = LauncherStatus.failed;
+                    MessageBox.Show($"Error checking for game updates: {ex}");
+
+                }
+            } else
+            {
+                InstallGameFiles(false, Version.zero);
+            }
+        }
+
+        private void InstallGameFiles(bool _isUpdate, Version _onlineVersion)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                if(_isUpdate)
+                {
+                    Status = LauncherStatus.downloadingUpdate;
+                } else
+                {
+                    Status = LauncherStatus.downloadingGame;
+                    _onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulator/Assets/version.txt"));
+
+                }
+
+                webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
+                webClient.DownloadFileAsync(new Uri("Game Zip Link"), gameZip, _onlineVersion);
+            }
+            catch (Exception ex)
+            {
+                Status = LauncherStatus.failed;
+                MessageBox.Show($"Error installing game files: {ex}");
+
+            }
+
+        }
+
+        private void DownloadGameCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            try
+            {
+                string onlineVersion = ((Version)e.UserState).ToString();
+                ZipFile.ExtractToDirectory(gameZip, rootPath, true);
+                File.Delete(gameZip);
+                File.WriteAllText(versionFile, onlineVersion);
+
+                VersionText.Text = onlineVersion;
+                Status = LauncherStatus.ready;
+            }
+            catch (Exception ex)
+            {
+                Status = LauncherStatus.failed;
+                MessageBox.Show($"Error finishing download: {ex}");
+
             }
         }
 
@@ -88,7 +162,18 @@ namespace DigitalLogicSimulatorUpdater
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Trace.WriteLine("FLAG");
+            if(File.Exists(gameExe) && Status == LauncherStatus.ready)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
+                startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
+                Process.Start(startInfo);
+
+                Close();
+            }
+            else if(Status == LauncherStatus.failed)
+            {
+                CheckForUpdates();
+            }
         }
     }
 
