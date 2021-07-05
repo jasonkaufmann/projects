@@ -35,7 +35,20 @@ namespace DigitalLogicSimulatorUpdater
                 _status = value;
                 switch(_status)
                 {
-
+                    case LauncherStatus.ready:
+                        updateResult.Text = "Play";
+                        break;
+                    case LauncherStatus.failed:
+                        updateResult.Text = "Update Failed - Retry";
+                        break;
+                    case LauncherStatus.downloadingGame:
+                        updateResult.Text = "Downloading Game";
+                        break;
+                    case LauncherStatus.downloadingUpdate:
+                        updateResult.Text = "Downloading Update";
+                        break;
+                    default:
+                        break;
                 }                                                 
             }
         }
@@ -58,9 +71,19 @@ namespace DigitalLogicSimulatorUpdater
             this.MaxWidth = this.Width;
             this.MaxHeight = this.Height;
         }
+
+        private void CheckForUpdates()
+        {
+            if(File.Exists(versionFile))
+            {
+                Version localVersion = new Version(File.ReadAllText(versionFile));
+                VersionText.Text = localVersion.ToString();
+            }
+        }
+
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-
+            CheckForUpdates();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
