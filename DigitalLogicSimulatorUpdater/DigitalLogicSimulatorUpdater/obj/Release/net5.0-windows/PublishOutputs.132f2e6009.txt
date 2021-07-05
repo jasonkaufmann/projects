@@ -1,0 +1,5 @@
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.exe
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.deps.json
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.runtimeconfig.json
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.pdb
