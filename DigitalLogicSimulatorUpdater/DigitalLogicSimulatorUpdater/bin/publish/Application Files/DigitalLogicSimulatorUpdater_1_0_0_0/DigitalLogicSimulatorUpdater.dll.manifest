@@ -69,16 +69,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NxO/VPIDLYsJlOE50vI/O6W5z2boB4Nxm/+spEhmDgs=</dsig:DigestValue>
+      <dsig:DigestValue>y2lFqtqNMn557ok9mp4JSLmnl9G/h7eAdhh6AL2jrCE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DigitalLogicSimulatorUpdater.exe" size="131072">
+  <file name="DigitalLogicSimulatorUpdater.exe" size="146432">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/higOo2E64sekAa3YjwyitWjJxs0j2Ck2myC5WPMb/Y=</dsig:DigestValue>
+      <dsig:DigestValue>qkr60Gk0byovYN02NcIxjBnTDGzgudWF9PnaY9+un0M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DigitalLogicSimulatorUpdater.runtimeconfig.json" size="154">

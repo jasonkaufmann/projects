@@ -1,0 +1,5 @@
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.exe
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.dll
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.deps.json
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.runtimeconfig.json
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.pdb

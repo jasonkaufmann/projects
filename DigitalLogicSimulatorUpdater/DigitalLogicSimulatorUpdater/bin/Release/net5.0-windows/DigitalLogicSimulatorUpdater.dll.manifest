@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="DigitalLogicSimulatorUpdater.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="DigitalLogicSimulatorUpdater.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="UpdaterLogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="14336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="15384">
       <assemblyIdentity name="Launcher" version="5.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bp9fjl7byH8wW5AxS4ORLANTIybrTzhXRvRGofAC/gs=</dsig:DigestValue>
+        <dsig:DigestValue>PpbpXhnI0R4vwI/MToWM4tvZj+57x2fVS1U13mxIzkI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,22 +63,22 @@
       <dsig:DigestValue>u60UFsWnCFOA1uEQfhsGxDmuIydWdLBsjUeuCbkqzFY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DigitalLogicSimulatorUpdater.dll" size="16384">
+  <file name="DigitalLogicSimulatorUpdater.dll" size="17432">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NxO/VPIDLYsJlOE50vI/O6W5z2boB4Nxm/+spEhmDgs=</dsig:DigestValue>
+      <dsig:DigestValue>8PSGxZtDXlNUA1jVBFXM/PgXRl6+VUECQoDEkHwkIPg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DigitalLogicSimulatorUpdater.exe" size="131072">
+  <file name="DigitalLogicSimulatorUpdater.exe" size="147480">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/higOo2E64sekAa3YjwyitWjJxs0j2Ck2myC5WPMb/Y=</dsig:DigestValue>
+      <dsig:DigestValue>etkbTa4KJqToFhP20aKlKhx9hpe2yN1d/hK9VMpsyso=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DigitalLogicSimulatorUpdater.runtimeconfig.json" size="154">
