@@ -86,7 +86,7 @@ namespace DigitalLogicSimulatorUpdater
                 try
                 {
                     WebClient webClient = new WebClient();
-                    Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulator/Assets/version.txt"));
+                    Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulatorUpdater/DigitalLogicSimulatorUpdater/bin/Debug/net5.0-windows/version.txt"));
 
                     if(onlineVersion.IsDifferentThan(localVersion))
                     {
@@ -119,7 +119,7 @@ namespace DigitalLogicSimulatorUpdater
                 } else
                 {
                     Status = LauncherStatus.downloadingGame;
-                    _onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulator/Assets/version.txt"));
+                    _onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DigitalLogicSimulatorUpdater/DigitalLogicSimulatorUpdater/bin/Debug/net5.0-windows/version.txt"));
 
                 }
 
