@@ -3,3 +3,6 @@ C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.deps.json
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.runtimeconfig.json
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\DigitalLogicSimulatorUpdater.pdb
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\System.Drawing.Common.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\publish\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

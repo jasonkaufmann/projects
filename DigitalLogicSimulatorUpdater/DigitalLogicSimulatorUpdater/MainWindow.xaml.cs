@@ -39,14 +39,14 @@ namespace DigitalLogicSimulatorUpdater
                 {
                     case LauncherStatus.ready:
                         updateResult.Text = "Click above to run";
-                        checkForUpdate.Content = "Play";
+                        checkForUpdate.Content = "Run";
                         LoadingAnimation.Visibility = Visibility.Hidden;
                         break;
                     case LauncherStatus.failed:
                         updateResult.Text = "Update Failed - Retry";
                         break;
                     case LauncherStatus.downloadingGame:
-                        updateResult.Text = "Downloading Game";
+                        updateResult.Text = "Downloading Program";
                         LoadingAnimation.Visibility = Visibility.Visible;
                         break;
                     case LauncherStatus.downloadingUpdate:
