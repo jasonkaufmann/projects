@@ -14,5 +14,30 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,478,0,0" Text="Version" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="149"/>
         <TextBlock Name="updateResult" HorizontalAlignment="Left" Margin="237,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="534" TextAlignment="Center"/>
         <TextBlock Name="VersionText" HorizontalAlignment="Left" Margin="164,478,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="143" TextAlignment="Left"/>
+        <Image Name ="LoadingAnimation" HorizontalAlignment="Left" Height="100" Margin="454,393,0,0" VerticalAlignment="Top" Width="100" Source="/Loading Animation.png">
+            <Image.RenderTransform>
+                <RotateTransform CenterX="50" CenterY="50" />
+            </Image.RenderTransform>
+            <Image.Style>
+                <Style>
+                    <Style.Triggers>
+                        <Trigger Property="Image.IsEnabled" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                    Storyboard.TargetProperty="RenderTransform.Angle"
+                                    From="0"
+                                    To="360"
+                                    Duration="0:0:1"
+                                    RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
     </Grid>
 </Window>

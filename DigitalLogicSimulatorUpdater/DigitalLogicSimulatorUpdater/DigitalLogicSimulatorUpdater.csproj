@@ -7,4 +7,22 @@
     <ApplicationIcon>UpdaterLogo.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Loading Animation.png" />
+    <None Remove="loading.gif" />
+    <None Remove="loadingBig.gif" />
+    <None Remove="UpdaterLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Loading Animation.png" />
+    <Resource Include="loading.gif" />
+    <Resource Include="loadingBig.gif" />
+    <Resource Include="UpdaterLogo.png" />
+  </ItemGroup>
+
 </Project>

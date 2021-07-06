@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO.Compression;
 using System.Net;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace DigitalLogicSimulatorUpdater
 {
@@ -38,15 +40,18 @@ namespace DigitalLogicSimulatorUpdater
                     case LauncherStatus.ready:
                         updateResult.Text = "Click above to run";
                         checkForUpdate.Content = "Play";
+                        LoadingAnimation.Visibility = Visibility.Hidden;
                         break;
                     case LauncherStatus.failed:
                         updateResult.Text = "Update Failed - Retry";
                         break;
                     case LauncherStatus.downloadingGame:
                         updateResult.Text = "Downloading Game";
+                        LoadingAnimation.Visibility = Visibility.Visible;
                         break;
                     case LauncherStatus.downloadingUpdate:
                         updateResult.Text = "Downloading Update";
+                        LoadingAnimation.Visibility = Visibility.Visible;
                         break;
                     default:
                         break;
@@ -161,9 +166,39 @@ namespace DigitalLogicSimulatorUpdater
             CheckForUpdates();
         }
 
+        public static Image RotateImage(Image img, float rotationAngle)
+        {
+            //create an empty Bitmap image
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+
+            //turn the Bitmap into a Graphics object
+            Graphics gfx = Graphics.FromImage(bmp);
+
+            //now we set the rotation point to the center of our image
+            gfx.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);
+
+            //now rotate the image
+            gfx.RotateTransform(rotationAngle);
+
+            gfx.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);
+
+            //set the InterpolationMode to HighQualityBicubic so to ensure a high
+            //quality image once it is transformed to the specified size
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            //now draw our new image onto the graphics object
+            gfx.DrawImage(img, new System.Drawing.Point(0, 0));
+
+            //dispose of our Graphics object
+            gfx.Dispose();
+
+            //return the image
+            return bmp;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(File.Exists(gameExe) && Status == LauncherStatus.ready)
+            if (File.Exists(gameExe) && Status == LauncherStatus.ready)
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
                 startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");

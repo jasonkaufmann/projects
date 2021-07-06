@@ -41,3 +41,8 @@ C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdate
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\ref\DigitalLogicSimulatorUpdater.dll
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.pdb
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.genruntimeconfig.cache
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.csproj.AssemblyReference.cache
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\System.Drawing.Common.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.csproj.CopyComplete
