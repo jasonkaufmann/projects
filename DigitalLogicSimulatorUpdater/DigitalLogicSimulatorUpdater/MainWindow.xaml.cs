@@ -7,6 +7,7 @@ using System.IO.Compression;
 using System.Net;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 
 namespace DigitalLogicSimulatorUpdater
 {
@@ -15,7 +16,8 @@ namespace DigitalLogicSimulatorUpdater
         ready, 
         failed, 
         downloadingGame,
-        downloadingUpdate
+        downloadingUpdate,
+        applicationOpen
     }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -52,6 +54,9 @@ namespace DigitalLogicSimulatorUpdater
                     case LauncherStatus.downloadingUpdate:
                         updateResult.Text = "Downloading Update";
                         LoadingAnimation.Visibility = Visibility.Visible;
+                        break;
+                    case LauncherStatus.applicationOpen:
+                        updateResult.Text = "Close Application and Retry";
                         break;
                     default:
                         break;
@@ -129,8 +134,18 @@ namespace DigitalLogicSimulatorUpdater
 
                 }
 
-                webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
-                webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/Build.zip"), gameZip, _onlineVersion);
+                bool isRunning = Process.GetProcessesByName("Digital Logic Simulator")
+               .FirstOrDefault(p => p.MainModule.FileName.StartsWith(gameExe)) != default(Process);
+
+                if (isRunning)
+                {
+                    Status = LauncherStatus.applicationOpen;
+                } else
+                {
+                    webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
+                    webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/Build.zip"), gameZip, _onlineVersion);
+                }
+                
             }
             catch (Exception ex)
             {
