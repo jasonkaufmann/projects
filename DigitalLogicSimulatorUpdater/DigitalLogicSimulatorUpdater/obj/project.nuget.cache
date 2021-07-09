@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Jg5mnNo1guVMAvI/E42YTpYpHpkJg++3tuqLddumTBkW/giI5MJXsHz2biV9KZgNS090zIxt9RDm50dcX7V6Mw==",
+  "dgSpecHash": "0X9ez/pkpO0Yo7bv0D2fMrKPyKLVeUfmTEJRaSqsmRl3G7Kt8roq0PTGTNYmx3GYBLOWxuF7YBdQxzpAS7LRnQ==",
   "success": true,
-  "projectFilePath": "C:\\repos\\projects\\DigitalLogicSimulatorUpdater\\DigitalLogicSimulatorUpdater\\DigitalLogicSimulatorUpdater.csproj",
+  "projectFilePath": "C:\\Users\\JPKSP\\projects\\DigitalLogicSimulatorUpdater\\DigitalLogicSimulatorUpdater\\DigitalLogicSimulatorUpdater.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jakaufmann\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\jakaufmann\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\jakaufmann\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512"
+    "C:\\Users\\JPKSP\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\JPKSP\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\JPKSP\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }
