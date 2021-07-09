@@ -24,10 +24,6 @@ C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.csproj.CopyComplete
-C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\DigitalLogicSimulatorUpdater.dll.manifest
-C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\DigitalLogicSimulatorUpdater.application
-C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.dll.manifest
-C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.application
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\DigitalLogicSimulatorUpdater.exe
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\DigitalLogicSimulatorUpdater.deps.json
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\DigitalLogicSimulatorUpdater.runtimeconfig.json
@@ -58,3 +54,7 @@ C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdate
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\DigitalLogicSimulatorUpdater.application
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.dll.manifest
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.application
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\Docker.DotNet.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\Newtonsoft.Json.dll
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.Properties.Resources.resources
+C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Release\net5.0-windows\DigitalLogicSimulatorUpdater.csproj.GenerateResource.cache

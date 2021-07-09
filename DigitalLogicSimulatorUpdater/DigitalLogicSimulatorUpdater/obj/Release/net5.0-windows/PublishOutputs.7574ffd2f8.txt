@@ -3,6 +3,8 @@ C:\repos\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.dll
 C:\repos\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.deps.json
 C:\repos\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.runtimeconfig.json
 C:\repos\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.pdb
+C:\repos\website\public_html\digitallogicsim\Docker.DotNet.dll
+C:\repos\website\public_html\digitallogicsim\Newtonsoft.Json.dll
 C:\repos\website\public_html\digitallogicsim\System.Drawing.Common.dll
 C:\repos\website\public_html\digitallogicsim\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\repos\website\public_html\digitallogicsim\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

@@ -1,0 +1,43 @@
+﻿<Window x:Class="DigitalLogicSimulatorUpdater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DigitalLogicSimulatorUpdater"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ContentRendered="Window_ContentRendered"
+        Title="DigiSim Updater" Height="576" Width="1080">
+    <Grid Background="Gainsboro">
+        <TextBlock HorizontalAlignment="Left" Margin="180,78,0,0" Text="Digital Logic Simulator" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="72" Height="89" TextAlignment="Center"/>
+        <Button Name="checkForUpdate"  Content="Check For Updates" HorizontalAlignment="Left" Height="70" Margin="402,210,0,0" VerticalAlignment="Top" Width="204" Click="Button_Click" FontFamily="Calibri" FontSize="24" Background="#FF767676"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,478,0,0" Text="Version" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="149"/>
+        <TextBlock Name="updateResult" HorizontalAlignment="Left" Margin="237,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="534" TextAlignment="Center"/>
+        <TextBlock Name="VersionText" HorizontalAlignment="Left" Margin="164,478,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="143" TextAlignment="Left"/>
+        <Image Name ="LoadingAnimation" HorizontalAlignment="Left" Height="100" Margin="454,393,0,0" VerticalAlignment="Top" Width="100" Source="/Loading Animation.png">
+            <Image.RenderTransform>
+                <RotateTransform CenterX="50" CenterY="50" />
+            </Image.RenderTransform>
+            <Image.Style>
+                <Style>
+                    <Style.Triggers>
+                        <Trigger Property="Image.IsEnabled" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                    Storyboard.TargetProperty="RenderTransform.Angle"
+                                    From="0"
+                                    To="360"
+                                    Duration="0:0:1"
+                                    RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+    </Grid>
+</Window>

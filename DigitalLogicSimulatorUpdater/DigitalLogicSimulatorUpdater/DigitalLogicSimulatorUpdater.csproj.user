@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\Properties\PublishProfiles\DigitalLogicSimulatorUpdater20210709011827.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>C:\repos\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\Properties\PublishProfiles\DigitalLogicSimulatorUpdater20210709152813.pubxml</_LastSelectedProfileId>
+    <NameOfLastUsedPublishProfile>DigitalLogicSimulatorUpdater20210709152813</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
