@@ -50,3 +50,7 @@ C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdate
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.csproj.CopyComplete
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.dll.manifest
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.application
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.dll.manifest
+C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\obj\Debug\net5.0-windows\DigitalLogicSimulatorUpdater.application
