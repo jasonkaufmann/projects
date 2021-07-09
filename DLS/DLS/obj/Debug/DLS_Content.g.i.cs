@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("loading%20animation.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("updaterlogo.ico")]
 
 

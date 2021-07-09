@@ -139,7 +139,7 @@ namespace DigitalLogicSimulatorUpdater
 
                 }
 
-                bool isRunning = Process.GetProcessesByName("Digital Logic Simulator")
+                bool isRunning = Process.GetProcessesByName("DigitalLogicSimulator.exe")
                .FirstOrDefault(p => p.MainModule.FileName.StartsWith(gameExe)) != default(Process);
 
                 if (isRunning)
