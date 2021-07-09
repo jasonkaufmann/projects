@@ -1,5 +1,0 @@
-C:\repos\projects\TuringSimUpdater\TuringSimUpdater\obj\Debug\TuringSimUpdater.csproj.AssemblyReference.cache
-C:\repos\projects\TuringSimUpdater\TuringSimUpdater\obj\Debug\MainWindow.g.cs
-C:\repos\projects\TuringSimUpdater\TuringSimUpdater\obj\Debug\App.g.cs
-C:\repos\projects\TuringSimUpdater\TuringSimUpdater\obj\Debug\TuringSimUpdater_MarkupCompile.cache
-C:\repos\projects\TuringSimUpdater\TuringSimUpdater\obj\Debug\TuringSimUpdater_MarkupCompile.lref

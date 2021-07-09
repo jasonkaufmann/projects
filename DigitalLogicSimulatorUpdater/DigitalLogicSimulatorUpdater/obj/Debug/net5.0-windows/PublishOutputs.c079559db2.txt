@@ -1,8 +1,0 @@
-C:\Users\JPKSP\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.exe
-C:\Users\JPKSP\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.dll
-C:\Users\JPKSP\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.deps.json
-C:\Users\JPKSP\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.runtimeconfig.json
-C:\Users\JPKSP\website\public_html\digitallogicsim\DigitalLogicSimulatorUpdater.pdb
-C:\Users\JPKSP\website\public_html\digitallogicsim\System.Drawing.Common.dll
-C:\Users\JPKSP\website\public_html\digitallogicsim\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\JPKSP\website\public_html\digitallogicsim\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

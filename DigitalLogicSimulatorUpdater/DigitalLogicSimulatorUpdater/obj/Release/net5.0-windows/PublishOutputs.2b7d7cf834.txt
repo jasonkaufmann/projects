@@ -1,5 +1,0 @@
-C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\publish\DigitalLogicSimulatorUpdater.exe
-C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\publish\DigitalLogicSimulatorUpdater.dll
-C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\publish\DigitalLogicSimulatorUpdater.deps.json
-C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\publish\DigitalLogicSimulatorUpdater.runtimeconfig.json
-C:\Users\JPKSP\projects\DigitalLogicSimulatorUpdater\DigitalLogicSimulatorUpdater\bin\Release\net5.0-windows\publish\DigitalLogicSimulatorUpdater.pdb
