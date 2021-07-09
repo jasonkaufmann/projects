@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "0X9ez/pkpO0Yo7bv0D2fMrKPyKLVeUfmTEJRaSqsmRl3G7Kt8roq0PTGTNYmx3GYBLOWxuF7YBdQxzpAS7LRnQ==",
+  "dgSpecHash": "QBv/rBpqTSAc5fF6mJI88EgQpyWpDLKxYStgfOUE6xM/30X/5+LMQQz4sJAlfg30362SVWlU6/ouOCcWaDxTwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\JPKSP\\projects\\DigitalLogicSimulatorUpdater\\DigitalLogicSimulatorUpdater\\DigitalLogicSimulatorUpdater.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\JPKSP\\.nuget\\packages\\docker.dotnet\\3.125.4\\docker.dotnet.3.125.4.nupkg.sha512",
     "C:\\Users\\JPKSP\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\JPKSP\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\JPKSP\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\JPKSP\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\JPKSP\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512"
   ],
   "logs": []
