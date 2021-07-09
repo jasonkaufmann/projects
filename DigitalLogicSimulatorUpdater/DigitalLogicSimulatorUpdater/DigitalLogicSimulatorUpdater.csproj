@@ -7,7 +7,6 @@
     <ApplicationIcon>UpdaterLogo.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>DigitalLogicSimulatorUpdater_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
-    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
   <ItemGroup>
