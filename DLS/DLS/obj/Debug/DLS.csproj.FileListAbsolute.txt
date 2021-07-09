@@ -16,3 +16,4 @@ C:\repos\projects\DLS\DLS\bin\Debug\DLS.exe.manifest
 C:\repos\projects\DLS\DLS\bin\Debug\DLS.application
 C:\repos\projects\DLS\DLS\obj\Debug\DLS.exe.manifest
 C:\repos\projects\DLS\DLS\obj\Debug\DLS.application
+C:\repos\projects\DLS\DLS\obj\Debug\DLS.csproj.AssemblyReference.cache

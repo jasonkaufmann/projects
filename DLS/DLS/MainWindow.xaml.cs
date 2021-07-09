@@ -45,6 +45,7 @@ namespace DigitalLogicSimulatorUpdater
                         break;
                     case LauncherStatus.failed:
                         updateResult.Text = "Update Failed - Retry";
+                        LoadingAnimation.Visibility = Visibility.Hidden;
                         break;
                     case LauncherStatus.downloadingGame:
                         updateResult.Text = "Downloading Program";
@@ -56,6 +57,7 @@ namespace DigitalLogicSimulatorUpdater
                         break;
                     case LauncherStatus.applicationOpen:
                         updateResult.Text = "Close Application and Retry";
+                        LoadingAnimation.Visibility = Visibility.Hidden;
                         break;
                     default:
                         break;
