@@ -142,8 +142,6 @@ namespace DigitalLogicSimulatorUpdater
                         process[0].Kill();
                         Status = LauncherStatus.applicationOpen;
                     }
-                    Task.Delay(250);
-                    Directory.Delete(Path.Combine(rootPath, "Build"), true);
                 }
                 else
                 {
@@ -171,7 +169,7 @@ namespace DigitalLogicSimulatorUpdater
             try
             {
                 string onlineVersion = ((Version)e.UserState).ToString();
-                ZipFile.ExtractToDirectory(gameZip, rootPath);
+                ZipFile.ExtractToDirectory(gameZip, rootPath, true);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
 
