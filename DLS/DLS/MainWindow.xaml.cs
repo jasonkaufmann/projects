@@ -127,10 +127,21 @@ namespace DigitalLogicSimulatorUpdater
         {
             try
             {
+                bool isRunning = Process.GetProcessesByName("DigitalLogicSimulator").Length > 0;
+                Trace.WriteLine("flag");
+                Trace.WriteLine(isRunning);
+                Trace.WriteLine("flag");
                 WebClient webClient = new WebClient();
                 if (_isUpdate)
                 {
                     Status = LauncherStatus.downloadingUpdate;
+                    if (isRunning)
+                    {
+                        var process = Process.GetProcessesByName("DigitalLogicSimulator");
+                        process[0].Kill();
+                        Status = LauncherStatus.applicationOpen;
+                    }
+                    Directory.Delete(Path.Combine(rootPath, "Build"), true);
                 }
                 else
                 {
@@ -139,18 +150,9 @@ namespace DigitalLogicSimulatorUpdater
 
                 }
 
-                bool isRunning = Process.GetProcessesByName("DigitalLogicSimulator.exe")
-               .FirstOrDefault(p => p.MainModule.FileName.StartsWith(gameExe)) != default(Process);
-
-                if (isRunning)
-                {
-                    Status = LauncherStatus.applicationOpen;
-                }
-                else
-                {
-                    webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
-                    webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/Build.zip"), gameZip, _onlineVersion);
-                }
+                webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
+                webClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/Build.zip"), gameZip, _onlineVersion);
+            
 
             }
             catch (Exception ex)
@@ -167,7 +169,6 @@ namespace DigitalLogicSimulatorUpdater
             try
             {
                 string onlineVersion = ((Version)e.UserState).ToString();
-                Directory.Delete(Path.Combine(rootPath, "Build"), true);
                 ZipFile.ExtractToDirectory(gameZip, rootPath);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
