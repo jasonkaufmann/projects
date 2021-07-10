@@ -167,6 +167,7 @@ namespace DigitalLogicSimulatorUpdater
             try
             {
                 string onlineVersion = ((Version)e.UserState).ToString();
+                Directory.Delete(Path.Combine(rootPath, "Build"), true);
                 ZipFile.ExtractToDirectory(gameZip, rootPath);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
