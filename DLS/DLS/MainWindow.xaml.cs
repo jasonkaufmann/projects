@@ -7,6 +7,7 @@ using System.IO.Packaging;
 using System.Net;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace DigitalLogicSimulatorUpdater
 {
@@ -141,6 +142,7 @@ namespace DigitalLogicSimulatorUpdater
                         process[0].Kill();
                         Status = LauncherStatus.applicationOpen;
                     }
+                    Task.Delay(250);
                     Directory.Delete(Path.Combine(rootPath, "Build"), true);
                 }
                 else
