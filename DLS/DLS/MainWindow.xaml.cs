@@ -34,6 +34,7 @@ namespace DigitalLogicSimulatorUpdater
         internal LauncherStatus Status
         {
             get => _status;
+            //just a comment
             set
             {
                 _status = value;
