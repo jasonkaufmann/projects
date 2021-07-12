@@ -22,6 +22,7 @@ C:\repos\projects\DLS\DLS\bin\Debug\DLS.exe.manifest
 C:\repos\projects\DLS\DLS\bin\Debug\DLS.application
 C:\repos\projects\DLS\DLS\bin\Debug\DLS.exe
 C:\repos\projects\DLS\DLS\bin\Debug\DLS.pdb
+C:\repos\projects\DLS\DLS\obj\Debug\DLS.csproj.AssemblyReference.cache
 C:\repos\projects\DLS\DLS\obj\Debug\MainWindow.g.cs
 C:\repos\projects\DLS\DLS\obj\Debug\App.g.cs
 C:\repos\projects\DLS\DLS\obj\Debug\DLS_MarkupCompile.cache
