@@ -80,6 +80,7 @@ namespace DigitalLogicSimulatorUpdater
             versionFile = Path.Combine(rootPath, "version.txt");
             gameExe = Path.Combine(rootPath, "Build", "DigitalLogicSimulator.exe");
             gameZip = Path.Combine(rootPath, "Build.zip");
+            
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -172,7 +173,7 @@ namespace DigitalLogicSimulatorUpdater
                 string onlineVersion = ((Version)e.UserState).ToString();
                 FileStream zipToOpen = new FileStream(gameZip, FileMode.Open);
                 ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update);
-                ZipArchiveExtensions.ExtractToDirectory(archive , rootPath, true);
+                ZipArchiveExtensions.ExtractToDirectory(archive , Path.Combine(rootPath, "Build"), true);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
 
