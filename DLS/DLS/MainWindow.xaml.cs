@@ -173,7 +173,7 @@ namespace DigitalLogicSimulatorUpdater
                 string onlineVersion = ((Version)e.UserState).ToString();
                 FileStream zipToOpen = new FileStream(gameZip, FileMode.Open);
                 ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update);
-                ZipArchiveExtensions.ExtractToDirectory(archive , Path.Combine(rootPath, "Build"), true);
+                ZipArchiveExtensions.ExtractToDirectory(archive , rootPath, true);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
 
