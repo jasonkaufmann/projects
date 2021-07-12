@@ -235,6 +235,7 @@ namespace DigitalLogicSimulatorUpdater
                     Directory.CreateDirectory(Path.GetDirectoryName(completeFileName));
                     continue;
                 }
+                Trace.WriteLine(completeFileName);
                 file.ExtractToFile(completeFileName, true);
             }
         }
