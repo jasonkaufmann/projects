@@ -36,3 +36,4 @@ C:\Users\JPKSP\projects\DLS\DLS\obj\Debug\DLS.exe.manifest
 C:\Users\JPKSP\projects\DLS\DLS\obj\Debug\DLS.application
 C:\Users\JPKSP\projects\DLS\DLS\obj\Debug\DLS.exe
 C:\Users\JPKSP\projects\DLS\DLS\obj\Debug\DLS.pdb
+C:\repos\projects\DLS\DLS\obj\Debug\DLS.TrustInfo.xml
