@@ -1,0 +1,44 @@
+Mono path[0] = 'C:/repos/projects/DLS/DLS/bin/Debug/Build/DigitalLogicSimulator_Data/Managed'
+Mono config path = 'C:/repos/projects/DLS/DLS/bin/Debug/Build/MonoBleedingEdge/etc'
+Initialize engine version: 2021.2.0a13 (71a161db37e2)
+[Subsystems] Discovering subsystems at path C:/repos/projects/DLS/DLS/bin/Debug/Build/DigitalLogicSimulator_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA Quadro P1000 (ID=0x1cbb)
+    Vendor:   NVIDIA
+    VRAM:     4019 MB
+    Driver:   27.21.14.5296
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.101 seconds
+D3D11 device created for Microsoft Media Foundation video decoding.
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.261300 ms
+FileNotFoundException: Could not find file "C:\repos\projects\DLS\DLS\bin\Debug\Build\DigitalLogicSimulator_Data\version.txt"
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00067] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x0000d] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at System.IO.File.ReadAllText (System.String path) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MenuControls.Start () [0x00010] in <7068548bec9740079bbc39a52852b59b>:0 
+
+Setting up 12 worker threads for Enlighten.
+  Thread -> id: 2530 -> priority: 1 
+  Thread -> id: 245c -> priority: 1 
+  Thread -> id: 3588 -> priority: 1 
+  Thread -> id: 7424 -> priority: 1 
+  Thread -> id: 6780 -> priority: 1 
+  Thread -> id: 7434 -> priority: 1 
+  Thread -> id: 47c8 -> priority: 1 
+  Thread -> id: 1ec4 -> priority: 1 
+  Thread -> id: 5bdc -> priority: 1 
+  Thread -> id: 65e8 -> priority: 1 
+  Thread -> id: 6510 -> priority: 1 
+  Thread -> id: 4778 -> priority: 1 

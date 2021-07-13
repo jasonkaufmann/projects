@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("updaterlogo.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("updaterlogonew.ico")]
 
 

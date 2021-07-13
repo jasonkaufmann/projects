@@ -101,6 +101,7 @@ namespace DigitalLogicSimulatorUpdater
                 {
                     WebClient webClient = new WebClient();
                     Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/version.txt"));
+               
 
                     if (onlineVersion.IsDifferentThan(localVersion))
                     {
