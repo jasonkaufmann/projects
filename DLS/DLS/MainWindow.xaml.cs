@@ -173,7 +173,7 @@ namespace DigitalLogicSimulatorUpdater
                 FileStream zipToOpen = new FileStream(gameZip, FileMode.Open);
                 ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update);
                 ZipArchiveExtensions.ExtractToDirectory(archive , rootPath, true);
-                while (ZipArchiveExtensions.IsFileLocked(new FileInfo(gameZip)));
+                while (IsFileLocked(new FileInfo(gameZip)));
                     Thread.Sleep(500);
                     Trace.WriteLine("IN USE");
                 File.Delete(gameZip);
@@ -194,29 +194,7 @@ namespace DigitalLogicSimulatorUpdater
         {
             CheckForUpdates();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (File.Exists(gameExe) && Status == LauncherStatus.ready)
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
-                startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
-                Process.Start(startInfo);
-                Close();
-            }
-            else if (Status == LauncherStatus.failed)
-            {
-                CheckForUpdates();
-            }
-        }
-    }
-
-
-
-    public static class ZipArchiveExtensions
-    {
-
-        public static bool IsFileLocked(FileInfo file)
+        protected virtual bool IsFileLocked(FileInfo file)
         {
             FileStream stream = null;
 
@@ -241,6 +219,29 @@ namespace DigitalLogicSimulatorUpdater
             //file is not locked
             return false;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(gameExe) && Status == LauncherStatus.ready)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
+                startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
+                Process.Start(startInfo);
+                Close();
+            }
+            else if (Status == LauncherStatus.failed)
+            {
+                CheckForUpdates();
+            }
+        }
+    }
+
+
+
+    public static class ZipArchiveExtensions
+    {
+
+ 
         public static void ExtractToDirectory(this ZipArchive archive, string destinationDirectoryName, bool overwrite)
         {
             if (!overwrite)
