@@ -8,6 +8,7 @@ using System.Net;
 using System.Linq;
 using System;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace DigitalLogicSimulatorUpdater
 {
@@ -172,7 +173,8 @@ namespace DigitalLogicSimulatorUpdater
                 FileStream zipToOpen = new FileStream(gameZip, FileMode.Open);
                 ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update);
                 ZipArchiveExtensions.ExtractToDirectory(archive , rootPath, true);
-                Task.Delay(5000);
+                while (ZipArchiveExtensions.IsFileLocked(new FileInfo(gameZip));
+                    Thread.Sleep(1000);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
 
@@ -208,8 +210,36 @@ namespace DigitalLogicSimulatorUpdater
         }
     }
 
+
+
     public static class ZipArchiveExtensions
     {
+
+        public static bool IsFileLocked(FileInfo file)
+        {
+            FileStream stream = null;
+
+            try
+            {
+                stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+            }
+            catch (IOException)
+            {
+                //the file is unavailable because it is:
+                //still being written to
+                //or being processed by another thread
+                //or does not exist (has already been processed)
+                return true;
+            }
+            finally
+            {
+                if (stream != null)
+                    stream.Close();
+            }
+
+            //file is not locked
+            return false;
+        }
         public static void ExtractToDirectory(this ZipArchive archive, string destinationDirectoryName, bool overwrite)
         {
             if (!overwrite)
