@@ -131,9 +131,7 @@ namespace DigitalLogicSimulatorUpdater
             try
             {
                 bool isRunning = Process.GetProcessesByName("DigitalLogicSimulator").Length > 0;
-                Trace.WriteLine("flag");
-                Trace.WriteLine(isRunning);
-                Trace.WriteLine("flag");
+                Trace.WriteLine("IS RUNNING: " + isRunning);
                 WebClient webClient = new WebClient();
                 if (_isUpdate)
                 {
