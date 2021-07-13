@@ -9,6 +9,7 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Reflection;
 
 namespace DigitalLogicSimulatorUpdater
 {
@@ -74,7 +75,7 @@ namespace DigitalLogicSimulatorUpdater
             //this.SizeToContent = System.Windows.SizeToContent.WidthAndHeight;
             this.Loaded += MainWindow_Loaded;
 
-            rootPath = Directory.GetCurrentDirectory();
+            rootPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             versionFile = Path.Combine(rootPath, "version.txt");
             gameExe = Path.Combine(rootPath, "Build", "DigitalLogicSimulator.exe");
             gameZip = Path.Combine(rootPath, "Build.zip");
