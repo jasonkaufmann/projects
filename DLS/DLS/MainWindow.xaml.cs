@@ -222,7 +222,7 @@ namespace DigitalLogicSimulatorUpdater
 
             foreach (ZipArchiveEntry file in archive.Entries)
             {
-                string completeFileName = Path.GetFullPath(Path.Combine(destinationDirectoryName, "Build", file.FullName));
+                string completeFileName = Path.GetFullPath(Path.Combine(destinationDirectoryName, file.FullName));
 
                 if (!completeFileName.StartsWith(destinationDirectoryFullPath, StringComparison.OrdinalIgnoreCase))
                 {
