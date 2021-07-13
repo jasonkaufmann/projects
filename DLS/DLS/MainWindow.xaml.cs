@@ -175,6 +175,7 @@ namespace DigitalLogicSimulatorUpdater
                 ZipArchiveExtensions.ExtractToDirectory(archive , rootPath, true);
                 while (ZipArchiveExtensions.IsFileLocked(new FileInfo(gameZip)));
                     Thread.Sleep(500);
+                    Trace.WriteLine("IN USE");
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
 
