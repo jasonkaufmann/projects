@@ -270,6 +270,7 @@ namespace DigitalLogicSimulatorUpdater
                 Trace.WriteLine(completeFileName);
                 file.ExtractToFile(completeFileName, true);
             }
+            archive.Dispose();
         }
     }
 
