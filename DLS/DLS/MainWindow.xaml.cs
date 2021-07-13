@@ -217,7 +217,7 @@ namespace DigitalLogicSimulatorUpdater
                 return;
             }
 
-            DirectoryInfo di = Directory.CreateDirectory(destinationDirectoryName);
+            DirectoryInfo di = Directory.CreateDirectory(Path.Combine(destinationDirectoryName, "Build"));
             string destinationDirectoryFullPath = di.FullName;
 
             foreach (ZipArchiveEntry file in archive.Entries)
