@@ -44,14 +44,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DLS.exe" size="34280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DLS.exe" size="34792">
       <assemblyIdentity name="DLS" version="1.0.0.0" publicKeyToken="91953F7256F74A0E" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ygBl6x9YX/JqPmYT7U6n5mHBQmpuuaMeHe3gJ5+bXMo=</dsig:DigestValue>
+        <dsig:DigestValue>4v0awkf0O7fydzFYptCBly1EXsc/yWDZmQtJZg+jIH8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

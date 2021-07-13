@@ -173,7 +173,7 @@ namespace DigitalLogicSimulatorUpdater
                 FileStream zipToOpen = new FileStream(gameZip, FileMode.Open);
                 ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update);
                 ZipArchiveExtensions.ExtractToDirectory(archive , rootPath, true);
-                while (ZipArchiveExtensions.IsFileLocked(new FileInfo(gameZip));
+                while (ZipArchiveExtensions.IsFileLocked(new FileInfo(gameZip)));
                     Thread.Sleep(500);
                 File.Delete(gameZip);
                 File.WriteAllText(versionFile, onlineVersion);
