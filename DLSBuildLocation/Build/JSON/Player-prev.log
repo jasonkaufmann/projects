@@ -1,0 +1,71 @@
+Mono path[0] = 'C:/repos/projects/DLS/DLS/bin/Debug/Build/DigitalLogicSimulator_Data/Managed'
+Mono config path = 'C:/repos/projects/DLS/DLS/bin/Debug/Build/MonoBleedingEdge/etc'
+Initialize engine version: 2021.2.0a13 (71a161db37e2)
+[Subsystems] Discovering subsystems at path C:/repos/projects/DLS/DLS/bin/Debug/Build/DigitalLogicSimulator_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA Quadro P1000 (ID=0x1cbb)
+    Vendor:   NVIDIA
+    VRAM:     4019 MB
+    Driver:   27.21.14.5296
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.103 seconds
+D3D11 device created for Microsoft Media Foundation video decoding.
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.631200 ms
+FileNotFoundException: Could not find file "C:\repos\projects\DLS\DLS\bin\Debug\Build\DigitalLogicSimulator_Data\version.txt"
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00067] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x0000d] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at System.IO.File.ReadAllText (System.String path) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MenuControls.Start () [0x00010] in <7068548bec9740079bbc39a52852b59b>:0 
+
+WebException: The remote server returned an error: (404) Not Found.
+  at System.Net.HttpWebRequest+<GetResponseFromData>d__240.MoveNext () [0x00152] in <0122aff4bb53490a8e60c63eaa18507a>:0 
+--- End of stack trace from previous location where exception was thrown ---
+  at System.Net.WebClient.DownloadDataInternal (System.Uri address, System.Net.WebRequest& request) [0x00072] in <0122aff4bb53490a8e60c63eaa18507a>:0 
+  at System.Net.WebClient.DownloadString (System.Uri address) [0x00020] in <0122aff4bb53490a8e60c63eaa18507a>:0 
+  at System.Net.WebClient.DownloadString (System.String address) [0x00016] in <0122aff4bb53490a8e60c63eaa18507a>:0 
+  at (wrapper remoting-invoke-with-check) System.Net.WebClient.DownloadString(string)
+  at MenuControls.checkGithubCurrentVersion () [0x0000c] in <7068548bec9740079bbc39a52852b59b>:0 
+  at MenuControls.checkUpdateStatusButtonClicked () [0x0000c] in <7068548bec9740079bbc39a52852b59b>:0 
+  at UnityEngine.Events.InvokableCall.Invoke () [0x00010] in <d1af9371081747a9bf11f45bc4818bb0>:0 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00022] in <d1af9371081747a9bf11f45bc4818bb0>:0 
+  at UnityEngine.UI.Button.Press () [0x0001c] in <847d339160db4016811c34e3dbb9ee4b>:0 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x00009] in <847d339160db4016811c34e3dbb9ee4b>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00007] in <847d339160db4016811c34e3dbb9ee4b>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) [0x00067] in <847d339160db4016811c34e3dbb9ee4b>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1)
+UnityEngine.EventSystems.StandaloneInputModule:ReleaseMouse(PointerEventData, GameObject)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent()
+UnityEngine.EventSystems.StandaloneInputModule:Process()
+UnityEngine.EventSystems.EventSystem:Update()
+
+Setting up 12 worker threads for Enlighten.
+  Thread -> id: 7a4 -> priority: 1 
+  Thread -> id: 2b24 -> priority: 1 
+  Thread -> id: 4f30 -> priority: 1 
+  Thread -> id: 76ec -> priority: 1 
+  Thread -> id: 5a90 -> priority: 1 
+  Thread -> id: 4720 -> priority: 1 
+  Thread -> id: 5e6c -> priority: 1 
+  Thread -> id: 72e8 -> priority: 1 
+  Thread -> id: 527c -> priority: 1 
+  Thread -> id: 5ed0 -> priority: 1 
+  Thread -> id: 746c -> priority: 1 
+  Thread -> id: 4488 -> priority: 1 
