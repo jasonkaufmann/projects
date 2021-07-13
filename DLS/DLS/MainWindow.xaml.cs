@@ -75,9 +75,6 @@ namespace DigitalLogicSimulatorUpdater
             this.Loaded += MainWindow_Loaded;
 
             rootPath = Directory.GetCurrentDirectory();
-            //Trace.WriteLine("FLAG!");
-            //Trace.WriteLine(rootPath);
-            //Trace.WriteLine("FLAG!");
             versionFile = Path.Combine(rootPath, "version.txt");
             gameExe = Path.Combine(rootPath, "Build", "DigitalLogicSimulator.exe");
             gameZip = Path.Combine(rootPath, "Build.zip");
