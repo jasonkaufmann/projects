@@ -10,6 +10,7 @@ using System;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Reflection;
+using Newtonsoft.Json.Linq;
 
 namespace DigitalLogicSimulatorUpdater
 {
@@ -99,8 +100,31 @@ namespace DigitalLogicSimulatorUpdater
 
                 try
                 {
+                    const String url =
+            "https://api.github.com/repos/jasonkaufmann/projects/contents/DLSBuildLocation/version.txt";
+
+                    var output = string.Empty;
+                    HttpWebRequest request = (HttpWebRequest)System.Net.WebRequest.Create(url);
+
+                    request.Headers.Add("Authorization", "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");
+                    request.AllowAutoRedirect = true;
+                    request.UserAgent = "jasonkaufmann";
+
+                    var response = (HttpWebResponse)request.GetResponse();
+
+                    using (var stream = new System.IO.MemoryStream())
+                    {
+                        response.GetResponseStream().CopyTo(stream);
+                        output = System.Text.Encoding.ASCII.GetString(stream.ToArray());
+                    }
+
+                    var details = JObject.Parse(output);
+                    var decodedString = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(details["content"].ToString()));
+                    response.Close();
+
+                
                     WebClient webClient = new WebClient();
-                    Version onlineVersion = new Version(webClient.DownloadString("https://raw.githubusercontent.com/jasonkaufmann/projects/master/DLSBuildLocation/version.txt"));
+                    Version onlineVersion = new Version(decodedString);
                
 
                     if (onlineVersion.IsDifferentThan(localVersion))
