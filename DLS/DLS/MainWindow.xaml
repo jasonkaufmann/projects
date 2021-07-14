@@ -12,7 +12,7 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,78,0,0" Text="Digital Logic Simulator" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="72" Height="89" TextAlignment="Center"/>
         <Button Name="checkForUpdate"  Content="Check For Updates" HorizontalAlignment="Center" Height="70" Margin="0,210,0,0" VerticalAlignment="Top" Width="204" Click="Button_Click" FontFamily="Calibri" FontSize="24" Background="#FF767676"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,478,0,0" Text="Version" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="149"/>
-        <TextBlock Name="updateResult" HorizontalAlignment="Center" Margin="0,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="1080" TextAlignment="Center"/>
+        <TextBlock Name="updateResult" HorizontalAlignment="Center" Margin="0,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="770" TextAlignment="Center"/>
         <TextBlock Name="VersionText" HorizontalAlignment="Left" Margin="164,478,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="48" Height="61" Width="143" TextAlignment="Left"/>
         <Image Name ="LoadingAnimation" HorizontalAlignment="Center" Height="100" Margin="0,390,0,0" VerticalAlignment="Top" Width="100" Source="/Loading Animation.png">
             <Image.RenderTransform>
