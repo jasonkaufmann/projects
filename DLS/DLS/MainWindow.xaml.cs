@@ -32,6 +32,7 @@ namespace DigitalLogicSimulatorUpdater
         private string versionFile;
         private string gameZip;
         private string gameExe;
+        private string autoRun;
 
         private LauncherStatus _status;
         internal LauncherStatus Status
@@ -80,7 +81,9 @@ namespace DigitalLogicSimulatorUpdater
             versionFile = Path.Combine(rootPath, "version.txt");
             gameExe = Path.Combine(rootPath, "Build", "DigitalLogicSimulator.exe");
             gameZip = Path.Combine(rootPath, "Build.zip");
-            
+
+            autoRun = Path.Combine(rootPath, "Build", "autorun.txt");
+
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -202,6 +205,13 @@ namespace DigitalLogicSimulatorUpdater
 
                 VersionText.Text = onlineVersion;
                 Status = LauncherStatus.ready;
+                if (File.Exists(gameExe) && Status == LauncherStatus.ready && File.Exists(autoRun))
+                {
+                    ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
+                    startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
+                    Process.Start(startInfo);
+                    Close();
+                }
             }
             catch (Exception ex)
             {
