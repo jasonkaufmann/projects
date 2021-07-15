@@ -137,6 +137,13 @@ namespace DigitalLogicSimulatorUpdater
                     else
                     {
                         Status = LauncherStatus.ready;
+                        if (File.Exists(gameExe) && Status == LauncherStatus.ready && File.Exists(autoRun))
+                        {
+                            ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
+                            startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
+                            Process.Start(startInfo);
+                            Close();
+                        }
                     }
 
                 }
